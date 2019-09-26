@@ -9,12 +9,12 @@ import java.sql.DriverManager;
  */
 public class Connect {
     Connection Conn;
-    String url = "";
+    String url = "jdbc:mariadb://localhost:3306/bd_tiendaColinias?";
     String user = "root";
     String password = "";
     public Connection ConnectDataBase(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.mariadb.jdbc.Driver");
             Conn = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
         }
