@@ -93,7 +93,7 @@ ALTER TABLE maestro_proveedores ADD CONSTRAINT maestro_proveedores__un UNIQUE ( 
 
 /**/
 
-CREATE TABLE maestro_articulos (
+CREATE TABLE maestro_inventario (
     ma_idproducto           CHAR(50 CHAR) NOT NULL,
     ma_nombreprd            CHAR(50 CHAR) NOT NULL,
     ma_marca                CHAR(50 CHAR),
@@ -104,34 +104,34 @@ CREATE TABLE maestro_articulos (
     ma_precioventa          NUMBER NOT NULL
 );
 
-COMMENT ON COLUMN maestro_articulos.ma_idproducto IS
+COMMENT ON COLUMN maestro_inventario.ma_idproducto IS
     'IdentificaciÃ³n del producto';
 
-COMMENT ON COLUMN maestro_articulos.ma_nombreprd IS
+COMMENT ON COLUMN maestro_inventario.ma_nombreprd IS
     'Nombre del producto';
 
-COMMENT ON COLUMN maestro_articulos.ma_marca IS
+COMMENT ON COLUMN maestro_inventario.ma_marca IS
     'Marca';
 
-COMMENT ON COLUMN maestro_articulos.ma_referencia IS
+COMMENT ON COLUMN maestro_inventario.ma_referencia IS
     'Referencia';
 
-COMMENT ON COLUMN maestro_articulos.ma_idproveedor IS
+COMMENT ON COLUMN maestro_inventario.ma_idproveedor IS
     'Id del proveedor';
 
-COMMENT ON COLUMN maestro_articulos.ma_unidadesexistencia IS
+COMMENT ON COLUMN maestro_inventario.ma_unidadesexistencia IS
     'Unidades en existencia del producto';
 
-COMMENT ON COLUMN maestro_articulos.ma_preciocosto IS
+COMMENT ON COLUMN maestro_inventario.ma_preciocosto IS
     'Precio del costo';
 
-COMMENT ON COLUMN maestro_articulos.ma_precioventa IS
+COMMENT ON COLUMN maestro_inventario.ma_precioventa IS
     'Precio de venta';
     
     
-ALTER TABLE maestro_articulos ADD CONSTRAINT maestro_articulos_pk PRIMARY KEY ( ma_idproducto );
+ALTER TABLE maestro_inventario ADD CONSTRAINT maestro_inventario_pk PRIMARY KEY ( ma_idproducto );
 
-ALTER TABLE maestro_articulos ADD CONSTRAINT maestro_articulos__un UNIQUE ( ma_idproducto ); 
+ALTER TABLE maestro_inventario ADD CONSTRAINT maestro_inventario__un UNIQUE ( ma_idproducto ); 
 
 /**/
 
@@ -215,7 +215,7 @@ CREATE TABLE maestro_productos (
     mp_nota_salida     CHAR(50 CHAR),
     mp_nota_corazon    CHAR(50 CHAR),
     mp_nota_fondo      CHAR(50 CHAR),
-    "MP_categoria "    CHAR(30 CHAR),
+    mp_categoria     CHAR(30 CHAR),
     mp_tipo            INTEGER,
     mp_onzas           INTEGER,
     mp_genero          CHAR(10 CHAR),
