@@ -363,9 +363,9 @@
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
+												<img src="images/home/blackXS.jpg" alt="" />
+												<h2>$200,000</h2>
+												<p>Paco Rabbane Black XS</p>
 												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 											</div>
 										</div>
@@ -375,9 +375,9 @@
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
+												<img src="images/home/invictus.jpg" alt="" />
+												<h2>$215,000</h2>
+												<p>Paso Rabbane Invictus INTENSE</p>
 												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 											</div>
 										</div>

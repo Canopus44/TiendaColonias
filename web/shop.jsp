@@ -86,11 +86,11 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
+								<li><a href=""><i class="fa fa-user"></i> Cuenta</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Salida</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="login.html"><i class="fa fa-lock"></i> Ingreso</a></li>
 							</ul>
 						</div>
 					</div>
@@ -117,9 +117,9 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html" class="active">Products</a></li>
 										<li><a href="product-details.html">Detalle de productos</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+										<li><a href="checkout.html">Salida</a></li> 
+										<li><a href="cart.html">Carrito</a></li> 
+										<li><a href="login.html">Ingreso</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
@@ -286,7 +286,7 @@
 						</div><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
+							<img src="images/home/home.png" alt="" />
 						</div><!--/shipping-->
 						
 					</div>
@@ -294,27 +294,27 @@
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Productos disponibles</h2>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product12.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/invictus.jpg" alt="" />
+										<h2>$215,000</h2>
+										<p>Paso Rabbane Invictus INTENSE</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>$215,000</h2>
+										        <p>Paso Rabbane Invictus INTENSE</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -324,22 +324,22 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product11.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/blackXS.jpg" alt="" />
+										<h2>$200,000</h2>
+										<p>Paco Rabbane Black XS</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>$200,000</h2>
+										        <p>Paco Rabbane Black XS</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -349,22 +349,22 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product10.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/onemillion.jpg" alt="" />
+										<h2>$230,000</h2>
+										<p>Paco Rabanne One Millio</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>$230,000</h2>
+										        <p>Paco Rabanne One Millio</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -390,7 +390,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -416,7 +416,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -441,7 +441,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -467,7 +467,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -493,7 +493,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -519,7 +519,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -545,7 +545,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -572,7 +572,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
@@ -598,7 +598,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
 										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
