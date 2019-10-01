@@ -113,7 +113,7 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.jsp">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">Tienda<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.jsp">Products</a></li>
 										<li><a href="product-details.jsp" class="active">Detalle productos</a></li> 
@@ -148,7 +148,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Category</h2>
+						<h2>Categoría</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 						<!--	 <div class="panel panel-default">
 								<div class="panel-heading">
@@ -176,23 +176,18 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
+											Hombres
 										</a>
 									</h4>
 								</div>
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Fendi</a></li>
-											<li><a href="">Guess</a></li>
-											<li><a href="">Valentino</a></li>
-											<li><a href="">Dior</a></li>
-											<li><a href="">Versace</a></li>
-											<li><a href="">Armani</a></li>
-											<li><a href="">Prada</a></li>
-											<li><a href="">Dolce and Gabbana</a></li>
-											<li><a href="">Chanel</a></li>
-											<li><a href="">Gucci</a></li>
+											<li><a href="">Paco Rabbane</a></li>
+											<li><a href="">Calvin Klein </a></li>
+											<li><a href="">Sweet Army </a></li>
+											<li><a href="">Hugo Boss</a></li>
+											<li><a href="">Lacoste </a></li>
 										</ul>
 									</div>
 								</div>
@@ -203,18 +198,23 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Womens
+											Mujeres
 										</a>
 									</h4>
 								</div>
 								<div id="womens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Fendi</a></li>
-											<li><a href="">Guess</a></li>
+											<li><a href="">Victorias's Secret</a></li>
+											<li><a href="">Paco Rabbane</a></li>
 											<li><a href="">Valentino</a></li>
 											<li><a href="">Dior</a></li>
 											<li><a href="">Versace</a></li>
+											<li><a href="">Armani</a></li>
+											<li><a href="">Prada</a></li>
+											<li><a href="">Dolce and Gabbana</a></li>
+											<li><a href="">Chanel</a></li>
+											<li><a href="">Gucci</a></li>
 										</ul>
 									</div>
 								</div>
@@ -280,7 +280,7 @@
 						</div><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
+							<img src="images/home/home.png" alt="" />
 						</div><!--/shipping-->
 						
 					</div>
@@ -378,7 +378,7 @@
 												<img src="images/home/invictus.jpg" alt="" />
 												<h2>$215,000</h2>
 												<p>Paso Rabbane Invictus INTENSE</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
 											</div>
 										</div>
 									</div>
@@ -387,10 +387,10 @@
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+												<img src="images/home/HBssDuo.jpg" alt="" />
+												<h2>$152,000</h2>
+												<p>Hugo Boss Man</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
 											</div>
 										</div>
 									</div>
@@ -548,9 +548,21 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="images/home/recommend1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
+													<img src="images/shop/invictus.jpg" alt="" />
+													<h2>$215,000</h2>
+                                                                                                        <p>Paco Rabbane Invictus INTENSE</p>
+													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/HugoBSS.jpg" alt="" />
+													<h2>$230,000</h2>
+                                                                                                        <p>Hugo Boss Energise</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 												</div>
 											</div>
@@ -560,21 +572,9 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
+													<img src="images/home/olimpea2.jpg" alt="" />
+													<h2>$300,000</h2>
+                                                                                                        <p>Paco Rabbane Olimpea</p>
 													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 												</div>
 											</div>

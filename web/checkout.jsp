@@ -368,10 +368,10 @@
 			</div>
 			<div class="payment-options">
 					<span>
-						<label><input type="checkbox"> Direct Bank Transfer</label>
+						<label><input type="checkbox"> Transferencia bancaria</label>
 					</span>
 					<span>
-						<label><input type="checkbox"> Check Payment</label>
+						<label><input type="checkbox"> Verificar el pago</label>
 					</span>
 					<span>
 						<label><input type="checkbox"> Paypal</label>

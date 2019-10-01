@@ -113,7 +113,7 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.jsp">Home</a></li>
-								<li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#" class="active">Tienda<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.jsp" class="active">Products</a></li>
 										<li><a href="product-details.jsp">Detalle de productos</a></li> 
@@ -168,8 +168,8 @@
 								<div id="Hombres" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Invictus</a></li>
-											<li><a href="">Carrera </a></li>
+											<li><a href="">Paco Rabbane</a></li>
+											<li><a href="">Calvin Klein </a></li>
 											<li><a href="">Sweet Army </a></li>
 											<li><a href="">Hugo Boss</a></li>
 											<li><a href="">Lacoste </a></li>
@@ -189,8 +189,8 @@
 								<div id="Mujeres" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Fendi</a></li>
-											<li><a href="">Guess</a></li>
+											<li><a href="">Victorias's Secret</a></li>
+											<li><a href="">Paco Rabbane</a></li>
 											<li><a href="">Valentino</a></li>
 											<li><a href="">Dior</a></li>
 											<li><a href="">Versace</a></li>
@@ -278,10 +278,10 @@
 						</div><!--/brands_products-->
 						
 						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
+							<h2>Rango de precio</h2>
 							<div class="well">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b>$ 0</b> <b class="pull-right">$ 600</b>
+								 <b>$ 0</b> <b class="pull-right">$ 600,000</b>
 							</div>
 						</div><!--/price-range-->
 						
@@ -301,7 +301,7 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/invictus.jpg" alt="" />
 										<h2>$215,000</h2>
-										<p>Paso Rabbane Invictus INTENSE</p>
+										<p>Paco Rabbane Invictus INTENSE</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 									</div>
 									<div class="product-overlay">
@@ -374,15 +374,15 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product9.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
+										<img src="images/shop/olimpea.jpg" alt="" />
+										<h2>$300,000</h2>
+										<p>Paco Rabbane Olimpea</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
+											<h2>$300,000</h2>
+											<p>Paco Rabbane Olimpea</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
@@ -400,16 +400,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product8.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/BlackXSW.jpg" alt="" />
+										<h2>$215,000</h2>
+										<p>Paco Rabbane XS Women</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>A{adir al acrrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>$215,000</h2>
+											<p>Victoria's Secret Bomshell</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al cacrrito</a>
 										</div>
 									</div>
 									<img src="images/home/sale.png" class="new" alt="" />
@@ -426,15 +426,41 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/product7.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/VSecretW.jpg" alt="" />
+										<h2>$315,000</h2>
+										<p>Victoria's Secret Bomshell</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al cacrrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
+											<h2>$315,000</h2>
+										        <p>Victoria's Secret Bomshell</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al cacrrito</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/shop/HugoBSS.jpg" alt="" />
+										<h2>$280,000</h2>
+										<p>Hugo Boss Energise</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al cacrrito</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$280,000</h2>
+										<p>Hugo Boss Energise</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
@@ -452,15 +478,15 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/product6.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/PureXS.jpg" alt="" />
+										<h2>$250,000</h2>
+										<p>Paco Rabanne PURE XS</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al cacrrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
+											<h2>$250,000</h2>
+										        <p>Paco Rabanne PURE XS</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
@@ -478,16 +504,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/product5.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<img src="images/shop/CK.jpg" alt="" />
+										<h2>$180,000</h2>
+										<p>Ck Calvin Klein BE</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>$180,000</h2>
+                                                                                        <p>Ck Calvin Klein BE</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
 										</div>
 									</div>
 								</div>
@@ -500,33 +526,7 @@
 							</div>
 						</div>
 						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/home/product4.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Lista de deseos</a></li>
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
+						<!--<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -603,7 +603,7 @@
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div>-->
 						
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
