@@ -115,11 +115,11 @@
 								<li><a href="index.html">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Detalle de productos</a></li> 
-										<li><a href="checkout.html">Salida</a></li> 
-										<li><a href="cart.html" class="active">Carrito</a></li> 
-										<li><a href="login.html">Ingreso</a></li> 
+                                        <li><a href="shop.jsp">Products</a></li>
+										<li><a href="product-details.jsp">Detalle de productos</a></li> 
+										<li><a href="checkout.jsp">Salida</a></li> 
+										<li><a href="cart.jsp" class="active">Carrito</a></li> 
+										<li><a href="login.jsp">Ingreso</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

@@ -88,9 +88,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Cuenta</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Salida</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Ingresar</a></li>
+								<li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Salida</a></li>
+								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<li><a href="login.jsp"><i class="fa fa-lock"></i> Ingresar</a></li>
 							</ul>
 						</div>
 					</div>
@@ -112,23 +112,23 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html" class="active">Detalle productos</a></li> 
-										<li><a href="checkout.html">Salida</a></li> 
-										<li><a href="cart.html">Carrito</a></li> 
-										<li><a href="login.html">Ingresar</a></li> 
+                                        <li><a href="shop.jsp">Products</a></li>
+										<li><a href="product-details.jsp" class="active">Detalle productos</a></li> 
+										<li><a href="checkout.jsp">Salida</a></li> 
+										<li><a href="cart.jsp">Carrito</a></li> 
+										<li><a href="login.jsp">Ingresar</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
+                                        <li><a href="blog.jsp">Blog List</a></li>
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
+								<li><a href="404.jsp">404</a></li>
 								<li><a href="contact-us.html">Contacto</a></li>
 							</ul>
 						</div>
@@ -340,9 +340,9 @@
 										Add to cart
 									</button>
 								</span>
-								<p><b>Availability:</b> In Stock</p>
-								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> E-SHOPPER</p>
+								<p><b>Disponibilidad:</b> In Stock</p>
+								<p><b>Condición</b> New</p>
+								<p><b>Brand:</b> THYRSUS</p>
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
 						</div>
@@ -365,7 +365,7 @@
 											<div class="productinfo text-center">
 												<img src="images/home/blackXS.jpg" alt="" />
 												<h2>$200,000</h2>
-												<p>Paco Rabbane Black XS</p>
+												<p>Paco Rabbane Black </p>
 												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 											</div>
 										</div>
@@ -640,11 +640,11 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+							<h2><span>THYRSUS</span></h2>
+							<p>Somos una compañía comprometida con la clase y la elegancia</p>
 						</div>
 					</div>
-					<div class="col-sm-7">
+					<!--<div class="col-sm-7">
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="#">
@@ -704,11 +704,11 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					<div class="col-sm-3">
 						<div class="address">
 							<img src="images/home/map.png" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+							<p>Av. Las Vegas Poblado, Antioquia COL</p>
 						</div>
 					</div>
 				</div>
@@ -720,59 +720,67 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Service</h2>
+							<h2>Servicios</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Online Help</a></li>
-								<li><a href="">Contact Us</a></li>
-								<li><a href="">Order Status</a></li>
-								<li><a href="">Change Location</a></li>
-								<li><a href="">FAQâ€™s</a></li>
+								<li><a href="">Ayuda online</a></li>
+								<li><a href="">Contáctanos</a></li>
+								<li><a href="">Estado de la orden</a></li>
+								<li><a href="">Cambiar locación</a></li>
+								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Opciones</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">T-Shirt</a></li>
-								<li><a href="">Mens</a></li>
-								<li><a href="">Womens</a></li>
-								<li><a href="">Gift Cards</a></li>
-								<li><a href="">Shoes</a></li>
+								
+								<li><a href="">Hombres</a></li>
+								<li><a href="">Mujeres</a></li>
+								<li><a href="">Tarjetas de regalo</a></li>
+								<li><a href="">Lociones</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Policies</h2>
+							<h2>Políticas</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Terms of Use</a></li>
-								<li><a href="">Privecy Policy</a></li>
-								<li><a href="">Refund Policy</a></li>
-								<li><a href="">Billing System</a></li>
-								<li><a href="">Ticket System</a></li>
+								<li><a href="">Términos y condiciones</a></li>
+								<li><a href="">Política de privacidad</a></li>
+								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>¿Quiénes somos?</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Company Information</a></li>
-								<li><a href="">Careers</a></li>
-								<li><a href="">Store Location</a></li>
-								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">Carrera</a></li>
+								<li><a href="">Ubicación</a></li>
+								<li><a href="">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Sobre THYRSUS</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">Carrera</a></li>
+								<li><a href="">Ubicación</a></li>
 								<li><a href="">Copyright</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Sobre THYRSUS</h2>
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+								<p>Obtén las mejores actualizaciones <br /></p>
 							</form>
 						</div>
 					</div>
@@ -784,7 +792,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright © 2019 THYRSUS Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>

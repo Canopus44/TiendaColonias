@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Checkout | E-Shopper</title>
+    <title>Checkout | Thyrsus</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -32,8 +32,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href=""><i class="fa fa-phone"></i> + 57 319 XXX XX XX</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> info@elpoli.edu.co</a></li>
 							</ul>
 						</div>
 					</div>
@@ -57,28 +57,28 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.jsp"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
+									COLOMBIA
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
 									<li><a href="">Canada</a></li>
-									<li><a href="">UK</a></li>
+									<li><a href="">USA</a></li>
 								</ul>
 							</div>
 							
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
+									PESO COL
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
 									<li><a href="">Canadian Dollar</a></li>
-									<li><a href="">Pound</a></li>
+									<li><a href="">DOLLAR</a></li>
 								</ul>
 							</div>
 						</div>
@@ -86,11 +86,11 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html" class="active"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href=""><i class="fa fa-user"></i> Cuenta</a></li>
+								<li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
+								<li><a href="checkout.jsp" class="active"><i class="fa fa-crosshairs"></i> Salida</a></li>
+								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<li><a href="login.jsp"><i class="fa fa-lock"></i> Ingreso</a></li>
 							</ul>
 						</div>
 					</div>
@@ -112,14 +112,14 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+								<li><a href="index.jsp">Home</a></li>
+								<li class="dropdown"><a href="#">Tienda<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html" class="active">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+                                        <li><a href="shop.jsp">Productos</a></li>
+										<li><a href="product-details.jsp">Detalle productos</a></li> 
+										<li><a href="checkout.jsp" class="active">Salida</a></li> 
+										<li><a href="cart.jsp">Carrito</a></li> 
+										<li><a href="login.jsp">Ingreso</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
@@ -156,7 +156,7 @@
 				<h2 class="heading">Step1</h2>
 			</div>
 			<div class="checkout-options">
-				<h3>New User</h3>
+				<h3>Usuario nuevo</h3>
 				<p>Checkout options</p>
 				<ul class="nav">
 					<li>
@@ -166,7 +166,7 @@
 						<label><input type="checkbox"> Guest Checkout</label>
 					</li>
 					<li>
-						<a href=""><i class="fa fa-times"></i>Cancel</a>
+						<a href=""><i class="fa fa-times"></i>Cancelar</a>
 					</li>
 				</ul>
 			</div><!--/checkout-options-->
@@ -209,10 +209,10 @@
 								<form>
 									<input type="text" placeholder="Zip / Postal Code *">
 									<select>
-										<option>-- Country --</option>
+										<option>-- País --</option>
 										<option>United States</option>
 										<option>Bangladesh</option>
-										<option>UK</option>
+										<option>Colombia</option>
 										<option>India</option>
 										<option>Pakistan</option>
 										<option>Ucrane</option>
@@ -223,7 +223,7 @@
 										<option>-- State / Province / Region --</option>
 										<option>United States</option>
 										<option>Bangladesh</option>
-										<option>UK</option>
+										<option>Colombia</option>
 										<option>India</option>
 										<option>Pakistan</option>
 										<option>Ucrane</option>
@@ -257,8 +257,8 @@
 						<tr class="cart_menu">
 							<td class="image">Item</td>
 							<td class="description"></td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
+							<td class="price">Precio</td>
+							<td class="quantity">Cantidad</td>
 							<td class="total">Total</td>
 							<td></td>
 						</tr>
@@ -388,11 +388,11 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+							<h2><span>THYRSUS</span></h2>
+							<p>Somos una compañía comprometida con la clase y la elegancia</p>
 						</div>
 					</div>
-					<div class="col-sm-7">
+					<!--<div class="col-sm-7">
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="#">
@@ -452,11 +452,11 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					<div class="col-sm-3">
 						<div class="address">
 							<img src="images/home/map.png" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+							<p>Av. Las Vegas Poblado, Antioquia COL</p>
 						</div>
 					</div>
 				</div>
@@ -468,59 +468,56 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Service</h2>
+							<h2>Servicios</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Online Help</a></li>
-								<li><a href="">Contact Us</a></li>
-								<li><a href="">Order Status</a></li>
-								<li><a href="">Change Location</a></li>
-								<li><a href="">FAQâ€™s</a></li>
+								<li><a href="">Ayuda online</a></li>
+								<li><a href="">Contáctanos</a></li>
+								<li><a href="">Estado de la orden</a></li>
+								<li><a href="">Cambiar locación</a></li>
+								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Opciones</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">T-Shirt</a></li>
-								<li><a href="">Mens</a></li>
-								<li><a href="">Womens</a></li>
-								<li><a href="">Gift Cards</a></li>
-								<li><a href="">Shoes</a></li>
+								
+								<li><a href="">Hombres</a></li>
+								<li><a href="">Mujeres</a></li>
+								<li><a href="">Tarjetas de regalo</a></li>
+								<li><a href="">Lociones</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Policies</h2>
+							<h2>Políticas</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Terms of Use</a></li>
-								<li><a href="">Privecy Policy</a></li>
-								<li><a href="">Refund Policy</a></li>
-								<li><a href="">Billing System</a></li>
-								<li><a href="">Ticket System</a></li>
+								<li><a href="">Términos y condiciones</a></li>
+								<li><a href="">Política de privacidad</a></li>
+								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>¿Quiénes somos?</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Company Information</a></li>
-								<li><a href="">Careers</a></li>
-								<li><a href="">Store Location</a></li>
-								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">Carrera</a></li>
+								<li><a href="">Ubicación</a></li>
 								<li><a href="">Copyright</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Sobre THYRSUS</h2>
 							<form action="#" class="searchform">
-								<input type="text" placeholder="Your email address" />
+								<input type="text" placeholder="Ingresa email" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+								<p>Obtén las mejores actualizaciones <br /></p>
 							</form>
 						</div>
 					</div>
@@ -532,7 +529,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright © 2019 THYRSUS Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
