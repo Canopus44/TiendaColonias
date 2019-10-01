@@ -10,11 +10,8 @@ import java.sql.SQLException;
  */
 public class Connect {
     Connection Conn;
-<<<<<<< Updated upstream
+
     String url = "jdbc:mariadb://localhost:3306/bd_tiendaColinias?";
-=======
-    String url = "com.mysql.jdbc.Driver";
->>>>>>> Stashed changes
     String user = "root";
     String password = "";
     public Connection ConnectDataBase(){
