@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class Proveedor {
     private String id_Proveedor;

@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class DetallePedido {
     private String id_Pedido;

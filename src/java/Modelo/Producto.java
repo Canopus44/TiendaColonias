@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class Producto {
    private String id_Prod;

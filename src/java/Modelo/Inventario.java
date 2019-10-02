@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class Inventario {
     private String id_Producto;

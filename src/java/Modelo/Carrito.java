@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class Carrito {
     private String id_Carrito;

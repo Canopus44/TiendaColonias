@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 public class Cliente {
     private int id_Cl;
@@ -13,7 +13,12 @@ public class Cliente {
     private String ciudad;
     private String depto;
     private String pais;
-
+    private String pswd;
+    private String foto;
+    private String rol;
+    private String descuento;
+    
+    
     public Cliente(int id_Cl, int nro_Doc, String tpo_Id, String nombre, String apellido, String email, String telefono, String direcc, String cod_Postal, String ciudad, String depto, String pais, String pswd, String foto, String rol, String descuento) {
         this.id_Cl = id_Cl;
         this.nro_Doc = nro_Doc;
@@ -32,10 +37,9 @@ public class Cliente {
         this.rol = rol;
         this.descuento = descuento;
     }
-    private String pswd;
-    private String foto;
-    private String rol;
-    private String descuento;
+
+    public Cliente() {
+    }   
 
     public int getId_Cl() {
         return id_Cl;
