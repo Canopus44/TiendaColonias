@@ -24,8 +24,9 @@ public class ControladorValidar extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String accion = request.getParameter("accion");
-        if (accion.equalsIgnoreCase("Ingresar")) {
+        String registro = request.getParameter("registro");
+        String login = request.getParameter("login");
+        if (login.equalsIgnoreCase("Ingresar")) {
             String correo = request.getParameter("txtcorreo");
             String pass = request.getParameter("txtpassword");
             cl = clDAO.Validar(correo, pass);
@@ -36,8 +37,11 @@ public class ControladorValidar extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } else {
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            if (registro.equalsIgnoreCase("Registrar")){
+                request.getRequestDispatcher("registrar.jsp");
+            }
         }
+        
     }
 
    

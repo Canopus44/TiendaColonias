@@ -21,6 +21,10 @@ public class Inventario {
         this.precio_Venta = precio_Venta;
     }
 
+    public Inventario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public double getPrecio_Venta() {
         return precio_Venta;
     }

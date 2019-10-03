@@ -41,6 +41,9 @@ public class Producto {
         this.precio_Descuento = precio_Descuento;
     }
 
+    public Producto() {
+    }
+
     public double getPrecio_Descuento() {
         return precio_Descuento;
     }
