@@ -83,4 +83,30 @@ public Inventario Consultar_nomProducto(String nombre_Prd) {
         }
         return inv;
     }
+
+
+public void Actualizar_Inventario(String Id_pro, int cantidad, boolean llenar){
+   
+  String sql = "update  maestro_inventario set ma_unidadesexistencia= ma_unidadesexistencia ";
+  //Validar si se realizó una venta o se añadió productos al inventario
+  if (llenar == true){
+      sql=sql.concat(" + ? where ma_idproducto= ? ");   
+  }else{
+      sql=sql.concat(" - ? where ma_idproducto= ? ");
+  }
+          
+          
+  
+  try{
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, cantidad);
+            ps.setString(2, Id_pro);
+            rs = ps.executeQuery();
+  }catch(Exception e){
+      
+  } 
+    
+    
+}
 }
