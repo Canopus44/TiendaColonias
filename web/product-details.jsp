@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Product Details | Vikingo's Shop</title>
+    <title>Datelle producto | Thyrsus Shop</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -148,7 +148,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Categoría</h2>
+						<h2>CategorÃ­a</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 						<!--	 <div class="panel panel-default">
 								<div class="panel-heading">
@@ -261,12 +261,12 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href=""> <span class="pull-right">(56)</span>GrÃ¼ne Erde</a></li>
+									<li><a href=""> <span class="pull-right">(56)</span>GrÃƒÂ¼ne Erde</a></li>
 									<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
 									<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
 									<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
 									<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href=""> <span class="pull-right">(4)</span>RÃ¶sch creative culture</a></li>
+									<li><a href=""> <span class="pull-right">(4)</span>RÃƒÂ¶sch creative culture</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -341,7 +341,7 @@
 									</button>
 								</span>
 								<p><b>Disponibilidad:</b> In Stock</p>
-								<p><b>Condición</b> New</p>
+								<p><b>CondiciÃ³n</b> New</p>
 								<p><b>Brand:</b> THYRSUS</p>
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
@@ -378,7 +378,7 @@
 												<img src="images/home/invictus.jpg" alt="" />
 												<h2>$215,000</h2>
 												<p>Paso Rabbane Invictus INTENSE</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AÃ±adir al carrito</button>
 											</div>
 										</div>
 									</div>
@@ -390,7 +390,7 @@
 												<img src="images/home/HBssDuo.jpg" alt="" />
 												<h2>$152,000</h2>
 												<p>Hugo Boss Man</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AÃ±adir al carrito</button>
 											</div>
 										</div>
 									</div>
@@ -551,7 +551,7 @@
 													<img src="images/shop/invictus.jpg" alt="" />
 													<h2>$215,000</h2>
                                                                                                         <p>Paco Rabbane Invictus INTENSE</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
+													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>AÃ±adir al carrito</button>
 												</div>
 											</div>
 										</div>
@@ -641,7 +641,7 @@
 					<div class="col-sm-2">
 						<div class="companyinfo">
 							<h2><span>THYRSUS</span></h2>
-							<p>Somos una compañía comprometida con la clase y la elegancia</p>
+							<p>Somos una compaÃ±Ã­a comprometida con la clase y la elegancia</p>
 						</div>
 					</div>
 					<!--<div class="col-sm-7">
@@ -723,9 +723,9 @@
 							<h2>Servicios</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="">Ayuda online</a></li>
-								<li><a href="">Contáctanos</a></li>
+								<li><a href="">ContÃ¡ctanos</a></li>
 								<li><a href="">Estado de la orden</a></li>
-								<li><a href="">Cambiar locación</a></li>
+								<li><a href="">Cambiar locaciÃ³n</a></li>
 								
 							</ul>
 						</div>
@@ -744,21 +744,21 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Políticas</h2>
+							<h2>PolÃ­ticas</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Términos y condiciones</a></li>
-								<li><a href="">Política de privacidad</a></li>
+								<li><a href="">TÃ©rminos y condiciones</a></li>
+								<li><a href="">PolÃ­tica de privacidad</a></li>
 								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>¿Quiénes somos?</h2>
+							<h2>Â¿QuiÃ©nes somos?</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">InformaciÃ³n de la compaÃ±Ã­a</a></li>
 								<li><a href="">Carrera</a></li>
-								<li><a href="">Ubicación</a></li>
+								<li><a href="">UbicaciÃ³n</a></li>
 								<li><a href="">Copyright</a></li>
 							</ul>
 						</div>
@@ -767,9 +767,9 @@
 						<div class="single-widget">
 							<h2>Sobre THYRSUS</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">InformaciÃ³n de la compaÃ±Ã­a</a></li>
 								<li><a href="">Carrera</a></li>
-								<li><a href="">Ubicación</a></li>
+								<li><a href="">UbicaciÃ³n</a></li>
 								<li><a href="">Copyright</a></li>
 							</ul>
 						</div>
@@ -780,7 +780,7 @@
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Obtén las mejores actualizaciones <br /></p>
+								<p>ObtÃ©n las mejores actualizaciones <br /></p>
 							</form>
 						</div>
 					</div>
@@ -792,7 +792,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2019 THYRSUS Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright Â© 2019 THYRSUS Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
