@@ -10,7 +10,8 @@ public class DetallePedido {
     private int Id_cliente;
     
 
-    public DetallePedido(String id_Pedido, String fecha, String estado, double valor_Venta, double valor_Compra) {
+    public DetallePedido(String id_Pedido, String fecha, String estado, double valor_Venta, double valor_Compra,
+                         String tpoDoc, int Id_Cliente) {
         this.id_Pedido = id_Pedido;
         this.fecha = fecha;
         this.estado = estado;
