@@ -33,11 +33,25 @@ COMMENT ON COLUMN bd_carrito.bd_totalcarrito IS
         (15, 2) NOT NULL COMMENT 'Valor del pedido',
     dp_valor_compra   DECIMAL
         (15, 2) NOT NULL COMMENT 'Valor compra del pedido'
+    dp_tpo_doc        CHAR(10) NOT NULL COMMENT 'Tipo Documento',
+    
+    dp_Id_Cliente     INTEGER NOT NULL  COMMENT 'Documento del cliente'  
+        
+        
 );
+  /* Moved to CREATE TABLE
+COMMENT ON COLUMN dp_detalle_pedido.dp_tpo_doc IS
+    'Tipo documento del cliente'; */
+    
+      /* Moved to CREATE TABLE
+COMMENT ON COLUMN dp_detalle_pedido.dp_Id_Cliente IS
+    'Identificación del cliente'; */
+
+
 
         /* Moved to CREATE TABLE
 COMMENT ON COLUMN dp_detalle_pedido.dp_id_pedido IS
-    'IdentificaciÃ³n del pedido'; */
+    'Identificación del pedido'; */
 
         /* Moved to CREATE TABLE
 COMMENT ON COLUMN dp_detalle_pedido.dp_fecha IS
