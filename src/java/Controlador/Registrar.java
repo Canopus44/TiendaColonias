@@ -71,7 +71,8 @@ public class Registrar extends HttpServlet {
             
             if (correo != null) {
                 clDAO.Registrar(cl);
-                request.getRequestDispatcher("shop.jsp").forward(request, response);
+                request.setAttribute("usuario", cl);
+                request.getRequestDispatcher("Controlador?accion=shop").forward(request, response);
             }
 
         }

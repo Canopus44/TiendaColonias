@@ -31,11 +31,12 @@ public class Validar extends HttpServlet {
             cl = clDAO.Validar(correo, pass);
             if (cl.getEmail() != null) {
                 if (cl.getRol().equals("admin")) {
+                    request.setAttribute("usuario", cl);
                     request.setAttribute("admin", cl);
-                    request.getRequestDispatcher("paneladmin.jsp").forward(request, response);
+                    request.getRequestDispatcher("Controlador?accion=admin").forward(request, response);
                 } else {
                     request.setAttribute("usuario", cl);
-                    request.getRequestDispatcher("shop.jsp").forward(request, response);
+                    request.getRequestDispatcher("Controlador?accion=shop").forward(request, response);
                 }
             } else {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
