@@ -6,7 +6,11 @@
     </servlet>
     <servlet>
         <servlet-name>Validar</servlet-name>
-        <servlet-class>Controlador.ControladorValidar</servlet-class>
+        <servlet-class>Controlador.Validar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Registrar</servlet-name>
+        <servlet-class>Controlador.Registrar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Validar</servlet-name>
         <url-pattern>/Validar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registrar</servlet-name>
+        <url-pattern>/Registrar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -13,6 +13,7 @@ public class ClienteDAO {
     PreparedStatement ps;
     ResultSet rs;
     String []Nom_campo;
+    private int r;
     
     public Cliente Validar(String correo, String password){
         Cliente cl = new Cliente();
@@ -46,35 +47,32 @@ public class ClienteDAO {
         return cl;
     }
     
-    public void Registrar(int doc, String tipoId, String nombre, String apellido,
-            String email, String tel, String dir, String Cod_postal, String ciudad,
-            String depto, String pais, String pswd, String foto, String rol, String des){
-      
-        String sql = "insert into maestro_clientes values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    public int Registrar(Cliente cl){      
+        String sql = "INSERT INTO bd_tienda.maestro_clientes (mc_nrodoc, mc_tpoid, mc_nombre, mc_apellido, mc_email, mc_telefono, mc_direcc, mc_codpostal, mc_ciudad, mc_depto, mc_pais, mc_pswd, mc_foto, mc_rol, mc_descuento)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, doc);
-            ps.setString(2, tipoId);
-            ps.setString(3, nombre);
-            ps.setString(4, apellido);
-            ps.setString(5, email);
-            ps.setString(6, tel);
-            ps.setString(7, dir);
-            ps.setString(8, Cod_postal);
-            ps.setString(9, ciudad);
-            ps.setString(10, pais);
-            ps.setString(11, pswd);
-            ps.setString(12, foto);
-            ps.setString(13, rol);
-            ps.setString(14, des);
-            rs=ps.executeQuery();
-            
+            ps.setInt(1, cl.getNro_Doc());
+            ps.setString(2, cl.getTpo_Id());
+            ps.setString(3, cl.getNombre());
+            ps.setString(4, cl.getApellido());
+            ps.setString(5, cl.getEmail());
+            ps.setString(6, cl.getTelefono());
+            ps.setString(7, cl.getDirecc());
+            ps.setString(8, cl.getCod_Postal());
+            ps.setString(9, cl.getCiudad());
+            ps.setString(10, cl.getDepto());
+            ps.setString(11, cl.getPais());
+            ps.setString(12, cl.getPswd());
+            ps.setString(13, cl.getFoto());
+            ps.setString(14, cl.getRol());
+            ps.setString(15, cl.getDescuento());
+            ps.executeUpdate();         
        //Verificar código de error del Executequery
         } catch(Exception e){
             
         }
-       
+       return r;
     }
     
      public void Eliminar(String email, int documento){

@@ -27,9 +27,9 @@
                             <label>Contraseña: </label>
                             <input type="password" name="txtpassword" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn btn-block">
-                        <label name="lblmensaje" ></label>
-                    </form>
+                        <input type="submit" name="login" value="Ingresar" class="btn btn-primary btn btn-block">
+                        <a type="submit" name="registro" value="Registrar" class="btn btn-primary btn btn-block" href="registrar.jsp">Registrar</a>
+                    </form>                    
                 </div>
             </div>
         </div>       
