@@ -148,7 +148,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>CategorÃ­a</h2>
+						<h2>Categoría</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 						<!--	 <div class="panel panel-default">
 								<div class="panel-heading">
@@ -256,7 +256,7 @@
 							</div>
 						</div><!--/category-products-->
 					
-						<div class="brands_products"><!--brands_products-->
+						<!--<div class="brands_products"><!--brands_products
 							<h2>Brands</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
@@ -290,7 +290,7 @@
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="images/product-details/1.jpg" alt="" />
+								<img src="images/product-details/home.png" alt="" />
 								<h3>ZOOM</h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -328,20 +328,20 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
+								<h2>Creed Original Santa</h2>
 								<p>Web ID: 1089772</p>
 								<img src="images/product-details/rating.png" alt="" />
 								<span>
-									<span>US $59</span>
+									<span>$342,000</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
-										Add to cart
+                                                                                Añadir al carrito
 									</button>
 								</span>
 								<p><b>Disponibilidad:</b> In Stock</p>
-								<p><b>CondiciÃ³n</b> New</p>
+								<p><b>Condiciónn</b> New</p>
 								<p><b>Brand:</b> THYRSUS</p>
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
@@ -351,8 +351,8 @@
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-								<li><a href="#details" data-toggle="tab">Details</a></li>
-								<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+								<li><a href="#details" data-toggle="tab">detalles</a></li>
+								<li><a href="#companyprofile" data-toggle="tab">Perfil de la compañía</a></li>
 								<li><a href="#tag" data-toggle="tab">Tag</a></li>
 								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
 							</ul>
@@ -514,22 +514,23 @@
 							<div class="tab-pane fade active in" id="reviews" >
 								<div class="col-sm-12">
 									<ul>
-										<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
+										<li><a href=""><i class="fa fa-user"></i>Colombia</a></li>
 										<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
-										<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+										<li><a href=""><i class="fa fa-calendar-o"></i>8 de Oct de 2019</a></li>
 									</ul>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-									<p><b>Write Your Review</b></p>
+									<p>He recibido correctamente mi pedido. Han sido muy puntuales y efectivos con la entrega. La calidad del producto es impecable. 
+                                                                        5 en el parcial.</p>
+									<p><b>Escribe tu comentario</b></p>
 									
 									<form action="#">
 										<span>
-											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
+											<input type="text" placeholder="Tu nombre"/>
+											<input type="email" placeholder="Tu dirección email"/>
 										</span>
 										<textarea name="" ></textarea>
 										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
 										<button type="button" class="btn btn-default pull-right">
-											Submit
+											Enviar
 										</button>
 									</form>
 								</div>
