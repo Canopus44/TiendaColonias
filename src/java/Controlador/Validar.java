@@ -33,10 +33,10 @@ public class Validar extends HttpServlet {
                 if (cl.getRol().equals("admin")) {
                     request.setAttribute("usuario", cl);
                     request.setAttribute("admin", cl);
-                    request.getRequestDispatcher("Controlador?accion=admin").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=admin").forward(request, response);
                 } else {
                     request.setAttribute("usuario", cl);
-                    request.getRequestDispatcher("Controlador?accion=shop").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=shop").forward(request, response);
                 }
             } else {
                 request.getRequestDispatcher("login.jsp").forward(request, response);

@@ -15,19 +15,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light"  href="#">Home</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light"  href="Controlador?menu=shop" target="myFrame">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Producto" target="myFrame">Producto</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myFrame">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Venta" target="myFrame">Ventas</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Venta" target="myFrame">Ventas</a>
                     </li>
                     <li  class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=NuevaVenta" target="myFrame">Nueva Venta</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva Venta</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Cliente" target="myFrame">Clientes</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>
                     </li>
 
                 </ul>                
