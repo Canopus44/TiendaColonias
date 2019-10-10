@@ -3,7 +3,7 @@
     Created on : 6/10/2019, 01:21:11 PM
     Author     : canop
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,21 +19,67 @@
                     <div class="card-body">
                         <form action="Controlador?menu=Producto" method="POST">
                             <div class="form-group">
-                                <label>Producto</label>
-                                <input type="text" value="${producto.getNom()}" name="txtDni" class="form-control">
+                                <label>Marca</label>
+                                <input type="text" value="${producto.getMarca()}" name="txtMarca" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Precio</label>
-                                <input type="text" value="${producto.getPre()}" name="txtNombres" class="form-control">
+                                <label>Nombre Producto</label>
+                                <input type="text" value="${producto.getNombre_Prd()}" name="txtNomProducto" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Stock</label>
-                                <input type="text" value="${producto.getStock()}" name="txtTel" class="form-control">
+                                <label>Referencia</label>
+                                <input type="text" value="${producto.getReferencia()}" name="txtReferencia" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Estado</label>
-                                <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control">
-                            </div>                        
+                                <label>Año Produccion</label>
+                                <input type="text" value="${producto.getAno_Inic()}" name="txtAnoInic" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>FMLAOLFAT</label>
+                                <input type="text" value="${producto.getFmlaolfat()}" name="txtFmlaolfat" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Nota Salida</label>
+                                <input type="text" value="${producto.getNota_Salida()}" name="txtNotaSalida" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Nota Fondo</label>
+                                <input type="text" value="${producto.getNota_Fondo()}" name="txtNotaFondo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Categoria</label>
+                                <input type="text" value="${producto.getCategoria()}" name="txtCategoria" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Oferta</label>
+                                <input type="text" value="${producto.getOferta()}" name="txtOferta" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Genero</label>
+                                <input type="text" value="${producto.getGenero()}" name="txtGenero" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo</label>
+                                <input type="text" value="${producto.getTipo()}" name="txtTipo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Onzas</label>
+                                <input type="text" value="${producto.getOnzas()}" name="txtOnzas" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Precio de Venta</label>
+                                <input type="text" value="${producto.getPrecio_Venta()}" name="txtPrecioVenta" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Descuento</label>
+                                <input type="text" value="${producto.getDescuento()}" name="txtDescuento" class="form-control">
+                            </div>
+                            <!--
+                            <div class="form-group">
+                                <label>Imagen</label>
+                                <input type="file"  name="txtImagen" class="form-control input-group-btn btn-primary">
+                            </div>
+                            -->
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                         </form>
@@ -47,28 +93,47 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombres</th>
-                                    <th>Precio</th>
-                                    <th>Stock</th>                                    
-                                    <th>ESTADO</th>                                    
+                                    <th>Marca</th>
+                                    <th>Nombre</th>
+                                    <th>Referencia</th>                                    
+                                    <th>Año Produccion</th>
+                                    <th>Fmlaolfat</th>
+                                    <th>Nota Salida</th>
+                                    <th>Nota Fondo</th>
+                                    <th>Categoria</th>
+                                    <th>Oferta</th>
+                                    <th>Genero</th>
+                                    <th>Tipo</th>
+                                    <th>Onzas</th>
+                                    <th>Precio Venta</th>
+                                    <th>Descuento</th>
                                     <th>ACCIONES</th>
                                 </tr>
                             </thead>
                             <tbody> 
-                                <c:forEach var="em" items="${productos}">
-                                    <tr>
-                                        <td>${em.getId()}</td>                                      
-                                        <td>${em.getNom()}</td>
-                                        <td>${em.getPre()}</td>
-                                        <td>${em.getStock()}</td>
-                                        <td>${em.getEstado()}</td>                                        
-                                        <td>
-                                            <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&id=${em.getId()}">Editar</a>
-                                            <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Delete&id=${em.getId()}">Delete</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-
+                            <c:forEach var="prd" items="${productos}">
+                                <tr>
+                                    <td>${prd.getId_Prod()}</td>                                      
+                                    <td>${prd.getMarca()}</td> 
+                                    <td>${prd.getNombre_Prd()}</td> 
+                                    <td>${prd.getReferencia()}</td> 
+                                    <td>${prd.getAno_Inic()}</td> 
+                                    <td>${prd.getFmlaolfat()}</td> 
+                                    <td>${prd.getNota_Salida()}</td> 
+                                    <td>${prd.getNota_Fondo()}</td> 
+                                    <td>${prd.getCategoria()}</td> 
+                                    <td>${prd.getOferta()}</td> 
+                                    <td>${prd.getGenero()}</td> 
+                                    <td>${prd.getTipo()}</td> 
+                                    <td>${prd.getOnzas()}</td> 
+                                    <td>${prd.getPrecio_Venta()}</td> 
+                                    <td>${prd.getDescuento()}</td> 
+                                    <td>
+                                        <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&id=${prd.getId_Prod()}">Editar</a>
+                                        <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Delete&id=${prd.getId_Prod()}">Delete</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

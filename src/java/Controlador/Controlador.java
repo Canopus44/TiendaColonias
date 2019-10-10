@@ -1,7 +1,9 @@
 package Controlador;
 
 import Model.DAO.ClienteDAO;
+import Model.DAO.ProductoDAO;
 import Modelo.Cliente;
+import Modelo.Producto;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -17,7 +19,10 @@ public class Controlador extends HttpServlet {
 
     Cliente cl = new Cliente();
     ClienteDAO clDAO = new ClienteDAO();
+    Producto prd = new Producto();
+    ProductoDAO prdDAO = new ProductoDAO();
     int idc;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
@@ -30,6 +35,53 @@ public class Controlador extends HttpServlet {
         }
 
         if (menu.equals("Producto")) {
+            switch (accion) {
+                case "Listar":
+                    List lista = prdDAO.Listar();
+                    request.setAttribute("productos", lista);
+                    break;
+                case "Agregar":
+                    String marca = request.getParameter("txtMarca");
+                    String producto = request.getParameter("txtNomProducto");
+                    String referencia = request.getParameter("txtReferencia");
+                    String anoProduccion = request.getParameter("txtAnoInic");
+                    String fmlaolfat = request.getParameter("txtFmlaolfat");
+                    String notaSalida = request.getParameter("txtNotaSalida");
+                    String notaFondo = request.getParameter("txtNotaFondo");
+                    String categoria = request.getParameter("txtCategoria");
+                    String oferta = request.getParameter("txtOferta");
+                    String Genero = request.getParameter("txtGenero");
+                    int Tipo = Integer.parseInt(request.getParameter("txtTipo"));
+                    int Onzas = Integer.parseInt(request.getParameter("txtOnzas"));
+                    double precioVenta = Double.parseDouble(request.getParameter("txtPrecioVenta"));
+                    double decuento = Double.parseDouble(request.getParameter("txtDescuento"));
+                    String notaCorazon = "0";
+                    
+                    
+                    prd.setMarca(marca);
+                    prd.setNombre_Prd(producto);
+                    prd.setReferencia(referencia);
+                    prd.setAno_Inic(anoProduccion);
+                    prd.setFmlaolfat(fmlaolfat);
+                    prd.setNota_Salida(notaSalida);
+                    prd.setNota_Corazon(notaCorazon);
+                    prd.setNota_Fondo(notaFondo);
+                    prd.setCategoria(categoria);
+                    prd.setTipo(Tipo);
+                    prd.setOnzas(Onzas);
+                    prd.setGenero(Genero); 
+                    prd.setOferta(oferta);                                     
+                    prd.setPrecio_Venta(precioVenta);
+                    prd.setDescuento(decuento);
+                    
+                    
+                    prdDAO.Registrar(prd);
+                    
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
             request.getRequestDispatcher("Admin/Producto.jsp").forward(request, response);
         }
 
@@ -82,7 +134,7 @@ public class Controlador extends HttpServlet {
                     cl.setDepto(depto);
 
                     clDAO.Registrar(cl);
-                    
+
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
@@ -108,11 +160,11 @@ public class Controlador extends HttpServlet {
                     String _foto = " ";
                     String _rol = "user";
                     String _des = "0";
-                    
+
                     clDAO.Actualizar(_doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
-                    
+
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
-                    break;    
+                    break;
                 case "Eliminar":
                     idc = Integer.parseInt(request.getParameter("id"));
                     cl.setId_Cl(idc);

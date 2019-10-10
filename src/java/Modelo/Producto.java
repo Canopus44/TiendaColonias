@@ -1,7 +1,7 @@
 package Modelo;
 
 public class Producto {
-   private String id_Prod;
+   private int id_Prod;
    private String marca;
    private String nombre_Prd;
    private String referencia;
@@ -20,7 +20,7 @@ public class Producto {
    private double descuento;
    private double precio_Descuento;
 
-    public Producto(String id_Prod, String marca, String nombre_Prd, String referencia, String ano_Inic, String fmlaolfat, String nota_Salida, String nota_Corazon, String nota_Fondo, String categoria, String oferta, String genero, int tipo, int onzas, double precio_Compra, double precio_Venta, double descuento, double precio_Descuento) {
+    public Producto(int id_Prod, String marca, String nombre_Prd, String referencia, String ano_Inic, String fmlaolfat, String nota_Salida, String nota_Corazon, String nota_Fondo, String categoria, String oferta, String genero, int tipo, int onzas, double precio_Compra, double precio_Venta, double descuento, double precio_Descuento) {
         this.id_Prod = id_Prod;
         this.marca = marca;
         this.nombre_Prd = nombre_Prd;
@@ -42,21 +42,13 @@ public class Producto {
     }
 
     public Producto() {
-    }
+    }   
 
-    public double getPrecio_Descuento() {
-        return precio_Descuento;
-    }
-
-    public void setPrecio_Descuento(double precio_Descuento) {
-        this.precio_Descuento = precio_Descuento;
-    }
-
-    public String getId_Prod() {
+    public int getId_Prod() {
         return id_Prod;
     }
 
-    public void setId_Prod(String id_Prod) {
+    public void setId_Prod(int id_Prod) {
         this.id_Prod = id_Prod;
     }
 
@@ -186,6 +178,14 @@ public class Producto {
 
     public void setDescuento(double descuento) {
         this.descuento = descuento;
+    }
+
+    public double getPrecio_Descuento() {
+        return precio_Descuento;
+    }
+
+    public void setPrecio_Descuento(double precio_Descuento) {
+        this.precio_Descuento = precio_Descuento;
     }
    
 }

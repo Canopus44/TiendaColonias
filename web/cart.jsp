@@ -88,9 +88,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Cuenta</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Salida</a></li>
-								<li><a href="cart.html" class="active"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Ingreso</a></li>
+								<li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Salida</a></li>
+								<li><a href="cart.jp" class="active"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<li><a href="login.jsp"><i class="fa fa-lock"></i> Ingreso</a></li>
 							</ul>
 						</div>
 					</div>

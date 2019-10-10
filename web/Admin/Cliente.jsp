@@ -107,7 +107,7 @@
                                         <td>${cl.getRol()}</td>
                                         <td>
                                             <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Editar&id=${cl.getId_Cl()}">Editar</a>
-                                            <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Delete&id=${cl.getId_Cl()}">Delete</a>
+                                            <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&id=${cl.getId_Cl()}">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

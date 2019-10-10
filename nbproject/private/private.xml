@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/web/Admin/Cliente.jsp</file>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/src/java/Controlador/Validar.java</file>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/src/java/Config/Conexion.java</file>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/src/java/Model/DAO/ClienteDAO.java</file>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/web/paneladmin.jsp</file>
-            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/src/java/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/web/cart.jsp</file>
+            <file>file:/C:/Users/canop/Documents/NetBeansProjects/TiendaColonias/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>
