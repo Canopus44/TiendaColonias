@@ -74,7 +74,9 @@ public class Controlador extends HttpServlet {
                     prd.setPrecio_Venta(precioVenta);
                     prd.setDescuento(decuento);
                     
-                    
+                    /*
+                    Se envia a registrar el producto en la Bd
+                    */
                     prdDAO.Registrar(prd);
                     
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
