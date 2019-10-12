@@ -35,6 +35,10 @@
                                 <input type="text" value="${producto.getAno_Inic()}" name="txtAnoInic" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label>Unidades en Stock</label>
+                                <input type="text" value="${producto.getStock()}" name="txtStock" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label>FMLAOLFAT</label>
                                 <input type="text" value="${producto.getFmlaolfat()}" name="txtFmlaolfat" class="form-control">
                             </div>
@@ -97,6 +101,7 @@
                                     <th>Nombre</th>
                                     <th>Referencia</th>                                    
                                     <th>Año Produccion</th>
+                                    <th>Stock</th>
                                     <th>Fmlaolfat</th>
                                     <th>Nota Salida</th>
                                     <th>Nota Fondo</th>
@@ -117,7 +122,8 @@
                                     <td>${prd.getMarca()}</td> 
                                     <td>${prd.getNombre_Prd()}</td> 
                                     <td>${prd.getReferencia()}</td> 
-                                    <td>${prd.getAno_Inic()}</td> 
+                                    <td>${prd.getAno_Inic()}</td>
+                                    <td>${prd.getStock()}</td> 
                                     <td>${prd.getFmlaolfat()}</td> 
                                     <td>${prd.getNota_Salida()}</td> 
                                     <td>${prd.getNota_Fondo()}</td> 

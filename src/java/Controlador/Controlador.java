@@ -56,7 +56,7 @@ public class Controlador extends HttpServlet {
                     double precioVenta = Double.parseDouble(request.getParameter("txtPrecioVenta"));
                     double decuento = Double.parseDouble(request.getParameter("txtDescuento"));
                     String notaCorazon = "0";
-                    
+                    int stock = Integer.parseInt(request.getParameter("txtStock"));
                     
                     prd.setMarca(marca);
                     prd.setNombre_Prd(producto);
@@ -73,6 +73,7 @@ public class Controlador extends HttpServlet {
                     prd.setOferta(oferta);                                     
                     prd.setPrecio_Venta(precioVenta);
                     prd.setDescuento(decuento);
+                    prd.setStock(stock);
                     
                     /*
                     Se envia a registrar el producto en la Bd
