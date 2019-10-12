@@ -110,7 +110,7 @@ public class ProductoDAO {
     }
 */
     public List Listar() {
-        String sql = "select * from maestro_clientes";
+        String sql = "select * from maestro_productos";
         List<Producto> lista = new ArrayList<>();
         try {
             con = cn.Conexion();
@@ -135,7 +135,8 @@ public class ProductoDAO {
                 prd.setPrecio_Venta(rs.getDouble(15));
                 prd.setDescuento(rs.getDouble(16));
                 prd.setPrecio_Descuento(rs.getDouble(17));
-                prd.setOferta(rs.getString(18));                
+                prd.setOferta(rs.getString(18));
+                prd.setStock(rs.getInt(19));
                 lista.add(prd);
             }
         } catch (Exception e) {
@@ -151,4 +152,6 @@ public class ProductoDAO {
         } catch (Exception e) {
         }
     }*/
+    
+    
 }

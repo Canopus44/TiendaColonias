@@ -72,7 +72,7 @@ public class Registrar extends HttpServlet {
             if (correo != null) {
                 clDAO.Registrar(cl);
                 request.setAttribute("usuario", cl);
-                request.getRequestDispatcher("Controlador?accion=shop").forward(request, response);
+                request.getRequestDispatcher("Controlador?menu=shop").forward(request, response);
             }
 
         }

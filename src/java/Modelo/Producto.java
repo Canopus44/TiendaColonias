@@ -19,8 +19,9 @@ public class Producto {
    private double precio_Venta;
    private double descuento;
    private double precio_Descuento;
+   private int stock;  
 
-    public Producto(int id_Prod, String marca, String nombre_Prd, String referencia, String ano_Inic, String fmlaolfat, String nota_Salida, String nota_Corazon, String nota_Fondo, String categoria, String oferta, String genero, int tipo, int onzas, double precio_Compra, double precio_Venta, double descuento, double precio_Descuento) {
+    public Producto(int id_Prod, String marca, String nombre_Prd, String referencia, String ano_Inic, String fmlaolfat, String nota_Salida, String nota_Corazon, String nota_Fondo, String categoria, String oferta, String genero, int tipo, int onzas, double precio_Compra, double precio_Venta, double descuento, double precio_Descuento, int stock) {
         this.id_Prod = id_Prod;
         this.marca = marca;
         this.nombre_Prd = nombre_Prd;
@@ -39,10 +40,11 @@ public class Producto {
         this.precio_Venta = precio_Venta;
         this.descuento = descuento;
         this.precio_Descuento = precio_Descuento;
+        this.stock = stock;
     }
 
     public Producto() {
-    }   
+    }
 
     public int getId_Prod() {
         return id_Prod;
@@ -187,5 +189,12 @@ public class Producto {
     public void setPrecio_Descuento(double precio_Descuento) {
         this.precio_Descuento = precio_Descuento;
     }
-   
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }
