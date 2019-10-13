@@ -136,7 +136,7 @@
                                     <td>${prd.getDescuento()}</td> 
                                     <td>
                                         <a class="btn btn-warning my-3" href="Controlador?menu=Producto&accion=Editar&id=${prd.getId_Prod()}">Editar</a>
-                                        <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Delete&id=${prd.getId_Prod()}">Delete</a>
+                                        <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Eliminar&id=${prd.getId_Prod()}">Delete</a>
                                     </td>
                                 </tr> 
                             </c:forEach>

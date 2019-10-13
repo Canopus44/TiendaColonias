@@ -21,7 +21,7 @@ public class Controlador extends HttpServlet {
     ClienteDAO clDAO = new ClienteDAO();
     Producto prd = new Producto();
     ProductoDAO prdDAO = new ProductoDAO();
-    int idc;
+    int idc,idp;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -84,6 +84,18 @@ public class Controlador extends HttpServlet {
                     */
                     prdDAO.Registrar(prd);
                     
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    idp = Integer.parseInt(request.getParameter("id"));
+                    Producto p = prdDAO.listarId(idp);
+                    request.setAttribute("producto", p);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    idp = Integer.parseInt(request.getParameter("id"));
+                    cl.setId_Cl(idc);
+                    clDAO.eliminar(idc);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 default:

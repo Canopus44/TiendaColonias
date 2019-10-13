@@ -5,6 +5,7 @@ import Modelo.Producto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,36 +82,39 @@ public class ProductoDAO {
         }
         return r;
     }
-    /*public Producto listarId(int id) {
+    public Producto listarId(int id) {
         Producto prd = new Producto();
-        String sql = "select * from maestro_clientes where mc_idcl=" + id;
+        String sql = "select * from maestro_productos where mp_idprod=" + id;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                prd.setId_Cl(rs.getInt(1));
-                prd.setNro_Doc(rs.getInt(2));
-                prd.setTpo_Id(rs.getString(3));
-                prd.setNombre(rs.getString(4));
-                prd.setApellido(rs.getString(5));
-                prd.setEmail(rs.getString(6));
-                prd.setTelefono(rs.getString(7));
-                prd.setDirecc(rs.getString(8));
-                prd.setCod_Postal(rs.getString(9));
-                prd.setCiudad(rs.getString(10));
-                prd.setDepto(rs.getString(11));
-                prd.setPais(rs.getString(12));
-                prd.setPswd(rs.getString(13));
-                prd.setFoto(rs.getString(14));
-                prd.setRol(rs.getString(15));
-                prd.setDescuento(rs.getString(16));
+                prd.setId_Prod(rs.getInt(1));
+                prd.setMarca(rs.getString(2));
+                prd.setNombre_Prd(rs.getString(3));
+                prd.setReferencia(rs.getString(4));
+                prd.setAno_Inic(rs.getString(5));
+                prd.setFmlaolfat(rs.getString(6));
+                prd.setNota_Salida(rs.getString(7));
+                prd.setNota_Corazon(rs.getString(8));
+                prd.setNota_Fondo(rs.getString(9));
+                prd.setCategoria(rs.getString(10));
+                prd.setTipo(rs.getInt(11));
+                prd.setOnzas(rs.getInt(12));
+                prd.setGenero(rs.getString(13));
+                prd.setPrecio_Compra(rs.getDouble(14));
+                prd.setPrecio_Venta(rs.getDouble(15));
+                prd.setDescuento(rs.getDouble(16));
+                prd.setPrecio_Descuento(rs.getDouble(17));
+                prd.setOferta(rs.getString(18));
+                prd.setStock(rs.getInt(19));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return prd;
     }
-*/
+
     public List Listar() {
         String sql = "select * from maestro_productos";
         List<Producto> lista = new ArrayList<>();
@@ -144,16 +148,16 @@ public class ProductoDAO {
         } catch (Exception e) {
         }
         return lista;
-    }/*
+    }
     public void eliminar(int id){
-        String sql="delete from maestro_clientes where mc_idcl="+id;
+        String sql="delete from maestro_productos where mp_idprod="+id;
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
         }
-    }*/
+    }
     
     
 }
