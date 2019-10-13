@@ -8,10 +8,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styler.css" rel="stylesheet">
         <title>JSP Page</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">           
+        <nav class="navbar navbar-expand-lg navback">           
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -44,7 +45,7 @@
                 </div>
             </div>
         </nav>
-        <div class="embed-responsives m-4" style="height: 530px;">
+        <div class="embed-responsives m-4" style="height: 950px;">
              <iframe class="embed-responsive-item" name="myFrame"  style="height: 100%; width: 100%; border:navy"></iframe>
         </div>   
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

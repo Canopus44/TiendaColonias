@@ -52,9 +52,7 @@ public class ProductoDAO {
     }
 
     public int Registrar(Producto prd) {
-        String sql = "INSERT INTO bd_tienda.maestro_productos (mp_marca, mp_nombreprd, mp_referencia, mp_anoinic, mp_fmlaolfat, mp_nota_salida,"
-                + " mp_nota_corazon, mp_nota_fondo, mp_categoria, mp_tipo, mp_onzas, mp_genero, mp_precio_compra, mp_descuentro,mp_stock)"
-                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?))";
+        String sql = "INSERT INTO maestro_productos (mp_marca, mp_nombreprd, mp_referencia, mp_anoinic, mp_fmlaolfat, mp_nota_salida, mp_nota_corazon, mp_nota_fondo, mp_categoria, mp_tipo, mp_onzas, mp_genero, mp_precio_compra, mp_precio_venta, mp_descuentro, mp_precio_descto, mp_oferta, mp_stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -70,9 +68,12 @@ public class ProductoDAO {
             ps.setInt(10, prd.getTipo());
             ps.setInt(11, prd.getOnzas());
             ps.setString(12, prd.getGenero());
-            ps.setDouble(13, prd.getPrecio_Venta());
-            ps.setDouble(14, prd.getDescuento());
-            ps.setInt(14, prd.getStock());
+            ps.setDouble(13, prd.getPrecio_Compra());
+            ps.setDouble(14, prd.getPrecio_Venta());
+            ps.setDouble(15, prd.getDescuento());
+            ps.setDouble(16, prd.getPrecio_Descuento());
+            ps.setString(17, prd.getOferta());
+            ps.setInt(18, prd.getStock());
             ps.executeUpdate();
             //Verificar código de error del Executequery
         } catch (Exception e) {
