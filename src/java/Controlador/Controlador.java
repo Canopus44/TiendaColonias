@@ -2,9 +2,12 @@ package Controlador;
 
 import Model.DAO.ClienteDAO;
 import Model.DAO.ProductoDAO;
+import Model.DAO.ShopCartDao;
 import Modelo.Cliente;
 import Modelo.Producto;
+import Modelo.ShopCart;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +24,9 @@ public class Controlador extends HttpServlet {
     ClienteDAO clDAO = new ClienteDAO();
     Producto prd = new Producto();
     ProductoDAO prdDAO = new ProductoDAO();
-    int idc,idp;
+    ShopCart shopcart = new ShopCart();
+    ShopCartDao shopDAO = new ShopCartDao();
+    int idc,idp,idshop;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -161,8 +166,11 @@ public class Controlador extends HttpServlet {
                     Cliente c = clDAO.listarId(idc);
                     request.setAttribute("cliente", c);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    
                     break;
                 case "Actualizar":
+                    String id = request.getParameter("Id");
+                    int clId = Integer.parseInt(id);
                     String _documento = request.getParameter("txtdocumento");
                     int _doc = Integer.parseInt(_documento);
                     String _tipoId = "CC";
@@ -180,7 +188,7 @@ public class Controlador extends HttpServlet {
                     String _rol = "user";
                     String _des = "0";
 
-                    clDAO.Actualizar(_doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
+                    clDAO.Actualizar(clId,_doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
 
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
@@ -195,7 +203,49 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Admin/Cliente.jsp").forward(request, response);
         }
+        if (menu.equals("Catalogo")) {
+            List catalog = prdDAO.Listar();
+            request.setAttribute("catalog", catalog);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            switch (accion) {
+                case "Agregar":
+                    idshop = Integer.parseInt(request.getParameter("id"));
+                    Producto shopp = prdDAO.listarId(idshop);
+                    String nombre = shopp.getNombre_Prd();
+                    Double precio = shopp.getPrecio_Compra();
+                    String imagen = shopp.getimagen();
+                    Double total= 1.1;
+                    int cantidad = 1;
+                    shopcart.setbd_totalcarrito(total);
+                    shopcart.setbd_nombreprod(nombre);
+                    shopcart.setbd_imgprod(imagen);
+                    shopcart.setbd_precioprod(precio);
+                    shopcart.setbd_cantidad(cantidad);
+                    
+                    shopDAO.AddShop(shopcart);
 
+                    request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+        }
+        if (menu.equals("ShopCart")) {
+            List ShopList = shopDAO.Listar();
+            request.setAttribute("shoplist", ShopList);
+            request.getRequestDispatcher("cart.jsp").forward(request, response);
+            switch (accion) {
+                case "Eliminar":
+                    idshop = Integer.parseInt(request.getParameter("id"));
+                    shopcart.setbd_idcarrito(idshop);
+                    shopDAO.eliminar(idshop);
+                    request.getRequestDispatcher("Controlador?menu=ShopCart").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

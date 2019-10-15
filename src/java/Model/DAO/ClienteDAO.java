@@ -122,7 +122,7 @@ public class ClienteDAO {
 
     }
 
-    public void Actualizar(int doc, String tipoId, String email, String tel,
+    public void Actualizar(int id, int doc, String tipoId, String email, String tel,
             String dir, String Cod_postal, String ciudad, String depto,
             String pais, String pswd, String foto, String rol, String des) {
 
@@ -184,7 +184,7 @@ public class ClienteDAO {
 
         //Eliminar la primera coma "," de sobra en el script
         sql = sql.replaceFirst(",", " ");
-
+        
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

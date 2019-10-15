@@ -109,6 +109,7 @@ public class ProductoDAO {
                 prd.setPrecio_Descuento(rs.getDouble(17));
                 prd.setOferta(rs.getString(18));
                 prd.setStock(rs.getInt(19));
+                 prd.setimagen(rs.getString(20));
             }
         } catch (SQLException e) {
         }
@@ -143,6 +144,7 @@ public class ProductoDAO {
                 prd.setPrecio_Descuento(rs.getDouble(17));
                 prd.setOferta(rs.getString(18));
                 prd.setStock(rs.getInt(19));
+                prd.setimagen(rs.getString(20));
                 lista.add(prd);
             }
         } catch (Exception e) {
@@ -158,6 +160,7 @@ public class ProductoDAO {
         } catch (Exception e) {
         }
     }
+    
     
     
 }

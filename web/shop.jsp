@@ -120,7 +120,7 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="Controlador?menu=Catalogo">Home</a></li>
                                     <li class="dropdown"><a href="#" class="active">Tienda<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="shop.jsp" class="active">Products</a></li>

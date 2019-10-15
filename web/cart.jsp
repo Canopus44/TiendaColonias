@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +24,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="stylesheet" href="css/styler.css"">
 </head><!--/head-->
 
 <body>
@@ -88,7 +91,7 @@
                                 <li><a href=""><i class="fa fa-user"></i> Cuenta</a></li>
                                 <li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
                                 <li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Salida</a></li>
-                                <li><a href="cart.jp" class="active"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                                <li><a href="Controlador?menu=ShopCart" class="active"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
                                 <li><a href="login.jsp"><i class="fa fa-lock"></i> Ingreso</a></li>
                             </ul>
                         </div>
@@ -134,7 +137,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="search_box pull-right">
-                            <input type="text" placeholder="Búsqueda"/>
+                            <input type="text" placeholder="BÃºsqueda"/>
                         </div>
                     </div>
                 </div>
@@ -150,177 +153,113 @@
                   <li class="active">Carrito de compras</li>
                 </ol>
             </div>
-            <div class="table-responsive cart_info">
-                <table class="table table-condensed">
-                    <thead>
-                        <tr class="cart_menu">
-                                <td class="image">Item</td>
-                                <td class="description"></td>
-                                <td class="price">Precio</td>
-                                <td class="quantity">Cantidad</td>
-                                <td class="total">Total</td>
-                                <td></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cart_product">
-                                <a href=""><img src="images/cart/blackXS.jpg" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Black Intese XS</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>$180,000</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">$180,000</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="cart_product">
-                                <a href=""><img src="images/cart/invictus.jpg" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Invictus</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>$215,000</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">$215,000</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
-                        <!--<tr>
-                                <td class="cart_product">
-                                        <a href=""><img src="images/cart/three.png" alt=""></a>
-                                </td>
-                                <td class="cart_description">
-                                        <h4><a href="">Colorblock Scuba</a></h4>
+            <div class="row">
+                <div class="col-sm-9">
+                    <table class="table table-hover table-responsive">
+                        <thead class="backhead">
+                            <tr>
+                                <th>Item</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th></th>
+                                
+                                
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            
+                            <c:forEach var="prod" items="${shoplist}">
+                                <tr>
+                                    <td >
+                                        <img src="${prod.getbd_imgprod()}" alt="" width="130" height="135">
+                                    </td>
+                                    <td >
+                                        <h4>${prod.getbd_nombreprod()}</h4>
                                         <p>Web ID: 1089772</p>
-                                </td>
-                                <td class="cart_price">
-                                        <p>$59</p>
-                                </td>
-                                <td class="cart_quantity">
+                                    </td>
+                                    <td >
+                                        <h4>$${prod.getbd_precioprod()}</h4>
+                                    </td>
+                                    <td class="cart_quantity">
                                         <div class="cart_quantity_button">
-                                                <a class="cart_quantity_up" href=""> + </a>
-                                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                                <a class="cart_quantity_down" href=""> - </a>
+                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
                                         </div>
-                                </td>
-                                <td class="cart_total">
-                                        <p class="cart_total_price">$59</p>
-                                </td>
-                                <td class="cart_delete">
-                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                </td>
-                        </tr>-->
-                    </tbody>
-                </table>
+                                    </td>
+                                    <td >
+                                        <p class="cart_total_price">$${prod.getbd_precioprod()}</p>
+                                    </td>
+                                    <td class="">
+                                        <a href="Controlador?menu=ShopCart&accion=Eliminar&id=${prod.getbd_idcarrito()}"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                           
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                    </div>
+             
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-hover table-responsive ">
+                                <thead class="backhead">
+                                    <tr>
+                                        <th>Item</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody> 
+                                    <tr>
+                                        <td >
+                                            Sub Total
+                                        </td>
+                                        <td >
+                                            $59
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td >
+                                            Eco Tax
+                                        </td>
+                                        <td >
+                                            $59
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td >
+                                            Costo de envÃ­o
+                                        </td>
+                                        <td >
+                                            $59
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td >
+                                            Total
+                                        </td>
+                                        <td >
+                                            $5000,000
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a class="btn btn-default update" href="">Pagar</a>
+                            <a class="btn check_out" href="">Ir al catalogo</a>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section> <!--/#cart_items-->
-
-	<section id="do_action">
-		<div class="container">
-			<div class="heading">
-				<!--<h3>¿Qué te gustaría hacer a continuación?</h3>
-				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>-->
-			<!--</div>
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="chose_area">
-						<ul class="user_option">
-							<li>
-								<input type="checkbox">
-								<label>Use Coupon Code</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Use Gift Voucher</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Estimate Shipping & Taxes</label>
-							</li>
-						</ul>
-						<ul class="user_info">
-							<li class="single_field">
-								<label>Country:</label>
-								<select>
-									<option>United States</option>
-									<option>Bangladesh</option>
-									<option>UK</option>
-									<option>India</option>
-									<option>Pakistan</option>
-									<option>Ucrane</option>
-									<option>Canada</option>
-									<option>Dubai</option>
-								</select>
-								
-							</li>
-							<li class="single_field">
-								<label>Region / State:</label>
-								<select>
-									<option>Select</option>
-									<option>Dhaka</option>
-									<option>London</option>
-									<option>Dillih</option>
-									<option>Lahore</option>
-									<option>Alaska</option>
-									<option>Canada</option>
-									<option>Dubai</option>
-								</select>
-							
-							</li>
-							<li class="single_field zip-field">
-								<label>Zip Code:</label>
-								<input type="text">
-							</li>
-						</ul>
-						<a class="btn btn-default update" href="">Get Quotes</a>
-						<a class="btn btn-default check_out" href="">Continue</a>
-					</div>
-				</div>-->
-				<div class="col-sm-6">
-					<div class="total_area">
-						<ul>
-							<li>Sub Total <span>$59</span></li>
-							<li>Eco Tax <span>$2</span></li>
-							<li>Costo de envío <span>Gratis</span></li>
-							<li>Total <span>$61</span></li>
-						</ul>
-							<a class="btn btn-default update" href="">Actualizar</a>
-							<a class="btn btn-default check_out" href="">Salida</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!--/#do_action-->
+    <br><br>
+	
 
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
@@ -329,7 +268,7 @@
 					<div class="col-sm-2">
 						<div class="companyinfo">
 							<h2><span>THYRSUS</span></h2>
-							<p>Somos una compañía comprometida con la clase y la elegancia</p>
+							<p>Somos una compaÃ±Ã­a comprometida con la clase y la elegancia</p>
 						</div>
 					</div>
 					<!--<div class="col-sm-7">
@@ -411,9 +350,9 @@
 							<h2>Servicios</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="">Ayuda online</a></li>
-								<li><a href="">Contáctanos</a></li>
+								<li><a href="">ContÃ¡ctanos</a></li>
 								<li><a href="">Estado de la orden</a></li>
-								<li><a href="">Cambiar locación</a></li>
+								<li><a href="">Cambiar locaciÃ³n</a></li>
 								
 							</ul>
 						</div>
@@ -432,21 +371,21 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Políticas</h2>
+							<h2>PolÃ­ticas</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Términos y condiciones</a></li>
-								<li><a href="">Política de privacidad</a></li>
+								<li><a href="">TÃ©rminos y condiciones</a></li>
+								<li><a href="">PolÃ­tica de privacidad</a></li>
 								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>¿Quiénes somos?</h2>
+							<h2>Â¿QuiÃ©nes somos?</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Información de la compañía</a></li>
+								<li><a href="">InformaciÃ³n de la compaÃ±Ã­a</a></li>
 								<li><a href="">Carrera</a></li>
-								<li><a href="">Ubicación</a></li>
+								<li><a href="">UbicaciÃ³n</a></li>
 								<li><a href="">Copyright</a></li>
 							</ul>
 						</div>
@@ -457,7 +396,7 @@
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Ingresa email" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Obtén las mejores actualizaciones <br /></p>
+								<p>ObtÃ©n las mejores actualizaciones <br /></p>
 							</form>
 						</div>
 					</div>
@@ -469,7 +408,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2019 THYRSUS Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright Â© 2019 THYRSUS Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
