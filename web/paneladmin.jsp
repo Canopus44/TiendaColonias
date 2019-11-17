@@ -30,7 +30,9 @@
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Proveedor&accion=Listar" target="myFrame">Proveedor</a>
+                    </li>
                 </ul>                
             </div>
             <div class="dropdown">

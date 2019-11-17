@@ -2,7 +2,7 @@ package Controlador;
 
 import Model.DAO.ClienteDAO;
 import Model.DAO.ProductoDAO;
-import Model.DAO.ShopCartDao;
+import Model.DAO.ShopCartDAO;
 import Modelo.Cliente;
 import Modelo.Producto;
 import Modelo.ShopCart;
@@ -25,8 +25,8 @@ public class Controlador extends HttpServlet {
     Producto prd = new Producto();
     ProductoDAO prdDAO = new ProductoDAO();
     ShopCart shopcart = new ShopCart();
-    ShopCartDao shopDAO = new ShopCartDao();
-    int idc,idp,idshop;
+    ShopCartDAO shopDAO = new ShopCartDAO();
+    int idc, idp, idshop;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -64,7 +64,7 @@ public class Controlador extends HttpServlet {
                     int stock = Integer.parseInt(request.getParameter("txtStock"));
                     double precioDescuento = 0;
                     double precioCompra = 0;
-                    
+
                     prd.setMarca(marca);
                     prd.setNombre_Prd(producto);
                     prd.setReferencia(referencia);
@@ -76,19 +76,19 @@ public class Controlador extends HttpServlet {
                     prd.setCategoria(categoria);
                     prd.setTipo(Tipo);
                     prd.setOnzas(Onzas);
-                    prd.setGenero(Genero); 
-                    prd.setOferta(oferta);                                     
+                    prd.setGenero(Genero);
+                    prd.setOferta(oferta);
                     prd.setPrecio_Venta(precioVenta);
                     prd.setDescuento(decuento);
                     prd.setStock(stock);
                     prd.setPrecio_Descuento(precioDescuento);
                     prd.setPrecio_Compra(precioCompra);
-                    
+
                     /*
                     Se envia a registrar el producto en la Bd
-                    */
+                     */
                     prdDAO.Registrar(prd);
-                    
+
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
@@ -166,7 +166,7 @@ public class Controlador extends HttpServlet {
                     Cliente c = clDAO.listarId(idc);
                     request.setAttribute("cliente", c);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
-                    
+
                     break;
                 case "Actualizar":
                     String id = request.getParameter("Id");
@@ -188,7 +188,7 @@ public class Controlador extends HttpServlet {
                     String _rol = "user";
                     String _des = "0";
 
-                    clDAO.Actualizar(clId,_doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
+                    clDAO.Actualizar(clId, _doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
 
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
@@ -214,14 +214,14 @@ public class Controlador extends HttpServlet {
                     String nombre = shopp.getNombre_Prd();
                     Double precio = shopp.getPrecio_Compra();
                     String imagen = shopp.getimagen();
-                    Double total= 1.1;
+                    Double total = 1.1;
                     int cantidad = 1;
                     shopcart.setbd_totalcarrito(total);
                     shopcart.setbd_nombreprod(nombre);
                     shopcart.setbd_imgprod(imagen);
                     shopcart.setbd_precioprod(precio);
                     shopcart.setbd_cantidad(cantidad);
-                    
+
                     shopDAO.AddShop(shopcart);
 
                     request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
@@ -245,6 +245,92 @@ public class Controlador extends HttpServlet {
                 default:
                     throw new AssertionError();
             }
+        }
+        if (menu.equals("Proveedor")) {
+            switch (accion) {
+                case "Listar":
+                    List lista = clDAO.Listar();
+                    request.setAttribute("clientes", lista);
+                    break;
+                case "Agregar":
+                    String documento = request.getParameter("txtdocumento");
+                    int doc = Integer.parseInt(documento);
+                    String tipoId = "CC";
+                    String nombre = request.getParameter("txtnombre");
+                    String apellido = request.getParameter("txtapellido");
+                    String correo = request.getParameter("txtcorreo");
+                    String telefono = request.getParameter("txttelefono");
+                    String dir = request.getParameter("txtdireccion");
+                    String Cod_postal = request.getParameter("txtcodpostal");
+                    String ciudad = request.getParameter("txtciudad");
+                    String depto = request.getParameter("txtdepartamento");
+                    String pais = request.getParameter("txtpais");
+                    String password = request.getParameter("txtpassword");
+                    String foto = " ";
+                    String rol = "user";
+                    String des = "0";
+
+                    cl.setNro_Doc(doc);
+                    cl.setTpo_Id(tipoId);
+                    cl.setNombre(nombre);
+                    cl.setApellido(apellido);
+                    cl.setEmail(correo);
+                    cl.setTelefono(telefono);
+                    cl.setDirecc(dir);
+                    cl.setCod_Postal(Cod_postal);
+                    cl.setCiudad(ciudad);
+                    cl.setPais(pais);
+                    cl.setPswd(password);
+                    cl.setFoto(foto);
+                    cl.setRol(rol);
+                    cl.setDescuento(des);
+                    cl.setDepto(depto);
+
+                    clDAO.Registrar(cl);
+
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    idc = Integer.parseInt(request.getParameter("id"));
+                    Cliente c = clDAO.listarId(idc);
+                    request.setAttribute("cliente", c);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+
+                    break;
+                case "Actualizar":
+                    String id = request.getParameter("Id");
+                    int clId = Integer.parseInt(id);
+                    String _documento = request.getParameter("txtdocumento");
+                    int _doc = Integer.parseInt(_documento);
+                    String _tipoId = "CC";
+                    String _nombre = request.getParameter("txtnombre");
+                    String _apellido = request.getParameter("txtapellido");
+                    String _correo = request.getParameter("txtcorreo");
+                    String _telefono = request.getParameter("txttelefono");
+                    String _dir = request.getParameter("txtdireccion");
+                    String _Cod_postal = request.getParameter("txtcodpostal");
+                    String _ciudad = request.getParameter("txtciudad");
+                    String _depto = request.getParameter("txtdepartamento");
+                    String _pais = request.getParameter("txtpais");
+                    String _password = request.getParameter("txtpassword");
+                    String _foto = " ";
+                    String _rol = "user";
+                    String _des = "0";
+
+                    clDAO.Actualizar(clId, _doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
+
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    idc = Integer.parseInt(request.getParameter("id"));
+                    cl.setId_Cl(idc);
+                    clDAO.eliminar(idc);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+            request.getRequestDispatcher("Admin/Cliente.jsp").forward(request, response);
         }
     }
 
