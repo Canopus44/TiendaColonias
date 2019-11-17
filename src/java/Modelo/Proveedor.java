@@ -1,8 +1,9 @@
 package Modelo;
 
 public class Proveedor {
-    private String id_Proveedor;
-    private String nombre_Proveedor;    
+
+    private int id_Proveedor;
+    private String nombre_Proveedor;
     private String ciudad;
     private String departamento;
     private String cod_Postal;
@@ -10,9 +11,9 @@ public class Proveedor {
     private String pais;
     private String num_telefono;
     private String num_fax;
-    private String email;    
+    private String email;
 
-    public Proveedor(String id_Proveedor, String nombre_Proveedor, String ciudad, String departamento, String cod_Postal, String provincia, String pais, String num_telefono, String num_fax, String email) {
+    public Proveedor(int id_Proveedor, String nombre_Proveedor, String ciudad, String departamento, String cod_Postal, String provincia, String pais, String num_telefono, String num_fax, String email) {
         this.id_Proveedor = id_Proveedor;
         this.nombre_Proveedor = nombre_Proveedor;
         this.ciudad = ciudad;
@@ -23,13 +24,16 @@ public class Proveedor {
         this.num_telefono = num_telefono;
         this.num_fax = num_fax;
         this.email = email;
-    }    
+    }
 
-    public String getId_Proveedor() {
+    public Proveedor() {
+    }
+
+    public int getId_Proveedor() {
         return id_Proveedor;
     }
 
-    public void setId_Proveedor(String id_Proveedor) {
+    public void setId_Proveedor(int id_Proveedor) {
         this.id_Proveedor = id_Proveedor;
     }
 

@@ -36,7 +36,7 @@
                                     <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Datos Cliente" class="form-control">
+                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Nombre Cliente" class="form-control">
                                 </div>                           
                             </div>
                             <!--DATOS DEL PRODUCTO-->

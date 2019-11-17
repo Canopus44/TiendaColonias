@@ -31,7 +31,7 @@
                             <div class="col-md-12 col-md-offset-2">
                                 <div class="card-body d-flex justify-content-center">
                                     <input type="submit" name="login" value="Ingresar" class="btn sty_bottomlog btn btn-block">
-                                </div>
+                                </div>                                
                             </div>
                         </div> 
                         <div class="row">
@@ -41,6 +41,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div><a href="recordarContrasena.jsp">Recordar Contraseña</a></div>
                     </form>
                 </div>
             </div>

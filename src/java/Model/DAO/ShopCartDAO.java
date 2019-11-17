@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author canop
  */
-public class ShopCartDao {
+public class ShopCartDAO {
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;

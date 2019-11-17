@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author canop
  */
-public class CatalogoDao {
+public class CatalogoDAO {
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
