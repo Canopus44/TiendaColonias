@@ -14,7 +14,8 @@ public class ProveedorDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-
+    private int r;
+    
     public Proveedor listarId(int id) {
         Proveedor pr = new Proveedor();
         String sql = "select * from maestro_proveedores where mp_idproveedor=" + id;
@@ -73,5 +74,27 @@ public class ProveedorDAO {
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+    
+    public int Registrar(Proveedor pr) {
+        String sql = "INSERT INTO bd_tienda.maestro_proveedores ( mp_nombreproveedor, mp_ciudad, mp_departamento, mp_codpostal, mp_provincia, mp_pais , mp_numtelefono, mp_numfax, mp_email )VALUES(?,?,?,?,?,?,?,?,?)";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, pr.getNombre_Proveedor());
+            ps.setString(2, pr.getCiudad());
+            ps.setString(3, pr.getDepartamento());
+            ps.setString(4, pr.getCod_Postal());
+            ps.setString(5, pr.getProvincia());
+            ps.setString(6, pr.getPais());
+            ps.setString(7, pr.getNum_telefono());
+            ps.setString(8, pr.getNum_fax());
+            ps.setString(9, pr.getEmail());          
+            ps.executeUpdate();
+            //Verificar código de error del Executequery
+        } catch (Exception e) {
+
+        }
+        return r;
     }
 }

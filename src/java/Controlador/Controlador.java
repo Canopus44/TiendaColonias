@@ -2,9 +2,11 @@ package Controlador;
 
 import Model.DAO.ClienteDAO;
 import Model.DAO.ProductoDAO;
+import Model.DAO.ProveedorDAO;
 import Model.DAO.ShopCartDAO;
 import Modelo.Cliente;
 import Modelo.Producto;
+import Modelo.Proveedor;
 import Modelo.ShopCart;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class Controlador extends HttpServlet {
     ProductoDAO prdDAO = new ProductoDAO();
     ShopCart shopcart = new ShopCart();
     ShopCartDAO shopDAO = new ShopCartDAO();
+    Proveedor prvd = new Proveedor();
+    ProveedorDAO prvdDAO = new ProveedorDAO();
     int idc, idp, idshop;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -249,8 +253,8 @@ public class Controlador extends HttpServlet {
         if (menu.equals("Proveedor")) {
             switch (accion) {
                 case "Listar":
-                    List lista = clDAO.Listar();
-                    request.setAttribute("clientes", lista);
+                    List lista = prvdDAO.Listar();
+                    request.setAttribute("proveedor", lista);
                     break;
                 case "Agregar":
                     String documento = request.getParameter("txtdocumento");
@@ -288,13 +292,13 @@ public class Controlador extends HttpServlet {
 
                     clDAO.Registrar(cl);
 
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
                     idc = Integer.parseInt(request.getParameter("id"));
-                    Cliente c = clDAO.listarId(idc);
-                    request.setAttribute("cliente", c);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    Proveedor p = prvdDAO.listarId(idc);
+                    request.setAttribute("proveedor", p);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
 
                     break;
                 case "Actualizar":
@@ -319,18 +323,18 @@ public class Controlador extends HttpServlet {
 
                     clDAO.Actualizar(clId, _doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
 
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 case "Eliminar":
                     idc = Integer.parseInt(request.getParameter("id"));
                     cl.setId_Cl(idc);
                     clDAO.eliminar(idc);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
             }
-            request.getRequestDispatcher("Admin/Cliente.jsp").forward(request, response);
+            request.getRequestDispatcher("Admin/Proveedor.jsp").forward(request, response);
         }
     }
 
