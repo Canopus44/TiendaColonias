@@ -23,39 +23,39 @@
                         <form action="Controlador?menu=Proveedor" method="POST">
                             <div class="form-group">
                                 <label>Nombre: </label>
-                                <input type="text" value="${proveedor.getNombre_Proveedor()}" name="txtNombreProveedor" class="form-control">
+                                <input type="text" value="${provedor.getNombre_Proveedor()}" name="txtNombreProveedor" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Ciudad : </label>
-                                <input type="text" value="${proveedor.getCiudad()}" name="txtCiudad" class="form-control">
+                                <input type="text" value="${provedor.getCiudad()}" name="txtCiudad" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Departamento : </label>
-                                <input type="text" value="${proveedor.getDepartamento()}" name="txtDepartamento" class="form-control">
+                                <input type="text" value="${provedor.getDepartamento()}" name="txtDepartamento" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Codigo Postal : </label>
-                                <input type="text" value="${proveedor.getCod_Postal()}" name="txtCodPostal" class="form-control">
+                                <input type="text" value="${provedor.getCod_Postal()}" name="txtCodPostal" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Provincia : </label>
-                                <input type="text" value="${proveedor.getProvincia()}" name="txtProvincia" class="form-control">
+                                <input type="text" value="${provedor.getProvincia()}" name="txtProvincia" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Pais : </label>
-                                <input type="text" value="${proveedor.getPais()}" name="txtdireccion" class="form-control">
+                                <input type="text" value="${provedor.getPais()}" name="txtPais" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Codigo Postal : </label>
-                                <input type="text" value="${proveedor.getNum_telefono()}"name="txtPais" class="form-control">
+                                <input type="text" value="${provedor.getNum_telefono()}"name="txtCodPostal" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Numero Fax : </label>
-                                <input type="text" value="${proveedor.getNum_fax()}" name="txtNumFax" class="form-control">
+                                <input type="text" value="${provedor.getNum_fax()}" name="txtNumFax" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Email : </label>
-                                <input type="text" value="${proveedor.getEmail()}"name="txtEmail" class="form-control">
+                                <input type="text" value="${provedor.getEmail()}"name="txtEmail" class="form-control">
                             </div>                          
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -80,8 +80,7 @@
                                     <th>NUM FAX</th>
                                     <th>EMAIL</th>                                                                      
                                     <th>ACCIONES</th>
-                                 </tr>
-                                
+                                 </tr>  
                                 
                                 
                             </thead>

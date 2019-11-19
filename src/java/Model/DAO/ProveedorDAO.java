@@ -97,4 +97,8 @@ public class ProveedorDAO {
         }
         return r;
     }
+
+    public void Actualizar(String _nombreProveedor, String _ciudad, String _departamento, String _codpostal, String _provincia, String _pais, String _numTelefono, String _numFax, String _email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

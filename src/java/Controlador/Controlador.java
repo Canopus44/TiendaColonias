@@ -30,7 +30,7 @@ public class Controlador extends HttpServlet {
     ShopCartDAO shopDAO = new ShopCartDAO();
     Proveedor prvd = new Proveedor();
     ProveedorDAO prvdDAO = new ProveedorDAO();
-    int idc, idp, idshop;
+    int idc, idp, idshop,idPrvd;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -103,8 +103,8 @@ public class Controlador extends HttpServlet {
                     break;
                 case "Eliminar":
                     idp = Integer.parseInt(request.getParameter("id"));
-                    cl.setId_Cl(idc);
-                    clDAO.eliminar(idc);
+                    prd.setId_Prod(idp);
+                    clDAO.eliminar(idp);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 default:
@@ -257,84 +257,63 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("proveedor", lista);
                     break;
                 case "Agregar":
-                    String documento = request.getParameter("txtdocumento");
-                    int doc = Integer.parseInt(documento);
-                    String tipoId = "CC";
-                    String nombre = request.getParameter("txtnombre");
-                    String apellido = request.getParameter("txtapellido");
-                    String correo = request.getParameter("txtcorreo");
-                    String telefono = request.getParameter("txttelefono");
-                    String dir = request.getParameter("txtdireccion");
-                    String Cod_postal = request.getParameter("txtcodpostal");
-                    String ciudad = request.getParameter("txtciudad");
-                    String depto = request.getParameter("txtdepartamento");
-                    String pais = request.getParameter("txtpais");
-                    String password = request.getParameter("txtpassword");
-                    String foto = " ";
-                    String rol = "user";
-                    String des = "0";
+                    String nombreProveedor = request.getParameter("txtNombreProveedor");                    
+                    String ciudad = request.getParameter("txtCiudad");
+                    String departamento = request.getParameter("txtDepartamento");
+                    String codpostal = request.getParameter("txtCodPostal");
+                    String provincia = request.getParameter("txtProvincia");
+                    String pais = request.getParameter("txtPais");
+                    String numTelefono = request.getParameter("txtCodPostal");
+                    String numFax = request.getParameter("txtNumFax");
+                    String email = request.getParameter("txtEmail");
+                    
 
-                    cl.setNro_Doc(doc);
-                    cl.setTpo_Id(tipoId);
-                    cl.setNombre(nombre);
-                    cl.setApellido(apellido);
-                    cl.setEmail(correo);
-                    cl.setTelefono(telefono);
-                    cl.setDirecc(dir);
-                    cl.setCod_Postal(Cod_postal);
-                    cl.setCiudad(ciudad);
-                    cl.setPais(pais);
-                    cl.setPswd(password);
-                    cl.setFoto(foto);
-                    cl.setRol(rol);
-                    cl.setDescuento(des);
-                    cl.setDepto(depto);
+                    prvd.setNombre_Proveedor(nombreProveedor);
+                    prvd.setCiudad(ciudad);
+                    prvd.setDepartamento(departamento);
+                    prvd.setCod_Postal(codpostal);
+                    prvd.setProvincia(provincia);
+                    prvd.setPais(pais);
+                    prvd.setNum_telefono(numTelefono);
+                    prvd.setNum_fax(numFax);
+                    prvd.setEmail(email);
 
-                    clDAO.Registrar(cl);
+                    prvdDAO.Registrar(prvd);
 
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
-                    idc = Integer.parseInt(request.getParameter("id"));
-                    Proveedor p = prvdDAO.listarId(idc);
-                    request.setAttribute("proveedor", p);
+                    idPrvd = Integer.parseInt(request.getParameter("id"));
+                    Proveedor p = prvdDAO.listarId(idPrvd);
+                    request.setAttribute("provedor", p);
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
 
                     break;
                 case "Actualizar":
-                    String id = request.getParameter("Id");
-                    int clId = Integer.parseInt(id);
-                    String _documento = request.getParameter("txtdocumento");
-                    int _doc = Integer.parseInt(_documento);
-                    String _tipoId = "CC";
-                    String _nombre = request.getParameter("txtnombre");
-                    String _apellido = request.getParameter("txtapellido");
-                    String _correo = request.getParameter("txtcorreo");
-                    String _telefono = request.getParameter("txttelefono");
-                    String _dir = request.getParameter("txtdireccion");
-                    String _Cod_postal = request.getParameter("txtcodpostal");
-                    String _ciudad = request.getParameter("txtciudad");
-                    String _depto = request.getParameter("txtdepartamento");
-                    String _pais = request.getParameter("txtpais");
-                    String _password = request.getParameter("txtpassword");
-                    String _foto = " ";
-                    String _rol = "user";
-                    String _des = "0";
+                    String _nombreProveedor = request.getParameter("txtNombreProveedor");                    
+                    String _ciudad = request.getParameter("txtCiudad");
+                    String _departamento = request.getParameter("txtDepartamento");
+                    String _codpostal = request.getParameter("txtCodPostal");
+                    String _provincia = request.getParameter("txtProvincia");
+                    String _pais = request.getParameter("txtPais");
+                    String _numTelefono = request.getParameter("txtCodPostal");
+                    String _numFax = request.getParameter("txtNumFax");
+                    String _email = request.getParameter("txtEmail");
 
-                    clDAO.Actualizar(clId, _doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
+                    prvdDAO.Actualizar(_nombreProveedor, _ciudad, _departamento, _codpostal, _provincia, _pais, _numTelefono, _numFax, _email);
 
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 case "Eliminar":
-                    idc = Integer.parseInt(request.getParameter("id"));
-                    cl.setId_Cl(idc);
-                    clDAO.eliminar(idc);
+                    idPrvd = Integer.parseInt(request.getParameter("id"));
+                    prvd.setId_Proveedor(idPrvd);
+                    prvdDAO.eliminar(idPrvd);
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();
             }
-            request.getRequestDispatcher("Admin/Proveedor.jsp").forward(request, response);
+            request.getRequestDispatcher("Admin/Proveedores.jsp").forward(request, response);
         }
     }
 
