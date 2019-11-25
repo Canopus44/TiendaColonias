@@ -24,7 +24,7 @@
         <div class="d-flex">
             <div class="col-lg-5 parte01">
                 <div class="card">
-                    <form action="Controlador?menu=NuevaVenta" method="POST">
+                    <form action="Controlador?menu=NuevoPedido" method="POST">
                         <div class="card-body">
                             <!--DATOS DEL PRODUCTO-->
                             <div class="form-group">
@@ -32,11 +32,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
+                                    <input type="text" name="txtCodigoCliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
                                     <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Nombre Cliente" class="form-control">
+                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Nombre Cliente" readonly="readonly" class="form-control">
                                 </div>                           
                             </div>
                             <!--DATOS DEL PRODUCTO-->
@@ -49,7 +49,7 @@
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control">
+                                    <input type="text" name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control" readonly="readonly">
                                 </div>  
                             </div>
                             <div class="form-group d-flex">
@@ -57,10 +57,10 @@
                                     <input type="text" name="precio" value="${producto.getPre()}" class="form-control" placeholder="S/.0.00">                                
                                 </div>                           
                                 <div class="col-sm-3">
-                                    <input type="number" value="1" name="cant" placeholder="" class="form-control">
+                                    <input type="number" min="1" max="99" name="cant" placeholder="0" class="form-control">
                                 </div>  
                                 <div class="col-sm-3">
-                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
+                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control" readonly="readonly">
                                 </div>  
                             </div>
                             <!--BOTON AGREGAR PRODUCTO AL REGISTRO-->

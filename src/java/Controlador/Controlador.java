@@ -50,6 +50,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("productos", lista);
                     break;
                 case "Agregar":
+                    
                     String marca = request.getParameter("txtMarca");
                     String producto = request.getParameter("txtNomProducto");
                     String referencia = request.getParameter("txtReferencia");
@@ -107,6 +108,49 @@ public class Controlador extends HttpServlet {
                     clDAO.eliminar(idp);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
+                case "Actualizar":
+                    int  _id = Integer.parseInt(request.getParameter("txtID"));
+                    String _marca = request.getParameter("txtMarca");
+                    String _producto = request.getParameter("txtNomProducto");
+                    String _referencia = request.getParameter("txtReferencia");
+                    String _anoProduccion = request.getParameter("txtAnoInic");
+                    String _fmlaolfat = request.getParameter("txtFmlaolfat");
+                    String _notaSalida = request.getParameter("txtNotaSalida");
+                    String _notaFondo = request.getParameter("txtNotaFondo");
+                    String _categoria = request.getParameter("txtCategoria");
+                    String _oferta = request.getParameter("txtOferta");
+                    String _Genero = request.getParameter("txtGenero");
+                    int _Tipo = Integer.parseInt(request.getParameter("txtTipo"));
+                    int _Onzas = Integer.parseInt(request.getParameter("txtOnzas"));
+                    double _precioVenta = Double.parseDouble(request.getParameter("txtPrecioVenta"));
+                    double _decuento = Double.parseDouble(request.getParameter("txtDescuento"));
+                    String _notaCorazon = "0";
+                    int _stock = Integer.parseInt(request.getParameter("txtStock"));
+                    double _precioDescuento = 0;
+                    double _precioCompra = 0;
+                    
+                    prd.setMarca(_marca);
+                    prd.setNombre_Prd(_producto);
+                    prd.setReferencia(_referencia);
+                    prd.setAno_Inic(_anoProduccion);
+                    prd.setFmlaolfat(_fmlaolfat);
+                    prd.setNota_Salida(_notaSalida);
+                    prd.setNota_Corazon(_notaCorazon);
+                    prd.setNota_Fondo(_notaFondo);
+                    prd.setCategoria(_categoria);
+                    prd.setTipo(_Tipo);
+                    prd.setOnzas(_Onzas);
+                    prd.setGenero(_Genero);
+                    prd.setOferta(_oferta);
+                    prd.setPrecio_Venta(_precioVenta);
+                    prd.setDescuento(_decuento);
+                    prd.setStock(_stock);
+                    prd.setPrecio_Descuento(_precioDescuento);
+                    prd.setPrecio_Compra(_precioCompra);
+                    
+                    
+                    prdDAO.Actualizar(prd,_id);
+                    break;
                 default:
                     throw new AssertionError();
             }
@@ -117,8 +161,9 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Admin/Ventas.jsp").forward(request, response);
         }
 
-        if (menu.equals("NuevaVenta")) {
-            request.getRequestDispatcher("Admin/NuevaVenta.jsp").forward(request, response);
+        if (menu.equals("NuevoPedido")) {
+            
+            request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
         }
 
         if (menu.equals("Cliente")) {
@@ -162,7 +207,6 @@ public class Controlador extends HttpServlet {
                     cl.setDepto(depto);
 
                     clDAO.Registrar(cl);
-
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
@@ -173,8 +217,7 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "Actualizar":
-                    String id = request.getParameter("Id");
-                    int clId = Integer.parseInt(id);
+                    int  _id = Integer.parseInt(request.getParameter("txtID"));                    
                     String _documento = request.getParameter("txtdocumento");
                     int _doc = Integer.parseInt(_documento);
                     String _tipoId = "CC";
@@ -191,9 +234,25 @@ public class Controlador extends HttpServlet {
                     String _foto = " ";
                     String _rol = "user";
                     String _des = "0";
-
-                    clDAO.Actualizar(clId, _doc, _tipoId, _correo, _telefono, _dir, _Cod_postal, _ciudad, _depto, _pais, _password, _foto, _rol, _des);
-
+                    
+                    cl.setNro_Doc(_doc);
+                    cl.setTpo_Id(_tipoId);
+                    cl.setNombre(_nombre);
+                    cl.setApellido(_apellido);
+                    cl.setEmail(_correo);
+                    cl.setTelefono(_telefono);
+                    cl.setDirecc(_dir);
+                    cl.setCod_Postal(_Cod_postal);
+                    cl.setCiudad(_ciudad);
+                    cl.setPais(_pais);
+                    cl.setPswd(_password);
+                    cl.setFoto(_foto);
+                    cl.setRol(_rol);
+                    cl.setDescuento(_des);
+                    cl.setDepto(_depto);                   
+                    
+                    clDAO.Actualizar(cl,_id);
+                    
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Eliminar":
@@ -290,6 +349,7 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "Actualizar":
+                    int  _id = Integer.parseInt(request.getParameter("txtID")); 
                     String _nombreProveedor = request.getParameter("txtNombreProveedor");                    
                     String _ciudad = request.getParameter("txtCiudad");
                     String _departamento = request.getParameter("txtDepartamento");
@@ -299,8 +359,18 @@ public class Controlador extends HttpServlet {
                     String _numTelefono = request.getParameter("txtCodPostal");
                     String _numFax = request.getParameter("txtNumFax");
                     String _email = request.getParameter("txtEmail");
-
-                    prvdDAO.Actualizar(_nombreProveedor, _ciudad, _departamento, _codpostal, _provincia, _pais, _numTelefono, _numFax, _email);
+                    
+                    prvd.setNombre_Proveedor(_nombreProveedor);
+                    prvd.setCiudad(_ciudad);
+                    prvd.setDepartamento(_departamento);
+                    prvd.setCod_Postal(_codpostal);
+                    prvd.setProvincia(_provincia);
+                    prvd.setPais(_pais);
+                    prvd.setNum_telefono(_numTelefono);
+                    prvd.setNum_fax(_numFax);
+                    prvd.setEmail(_email);
+                    
+                    prvdDAO.Actualizar(prvd,_id);
 
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;

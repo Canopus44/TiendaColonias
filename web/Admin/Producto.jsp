@@ -19,6 +19,10 @@
                     <div class="card-body">
                         <form action="Controlador?menu=Producto" method="POST">
                             <div class="form-group">
+                                <label>ID Producto : </label>
+                                <input type="text" readonly="readonly" value="${producto.getId_Prod()}" name="txtID" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label>Marca</label>
                                 <input type="text" value="${producto.getMarca()}" name="txtMarca" class="form-control">
                             </div>

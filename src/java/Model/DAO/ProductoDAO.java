@@ -160,6 +160,38 @@ public class ProductoDAO {
         } catch (Exception e) {
         }
     }
+
+    public void Actualizar(Producto prd, int _id) {
+        String sql = "UPDATE  b_tienda.maestro_productos "
+                + " SET mp_marca = ?, mp_nombreprd = ? , mp_referencia= ?, mp_anoinic = ?, mp_fmlaolfat = ?, mp_nota_salida = ?, mp_nota_corazon = ?, mp_nota_fondo = ?, mp_categoria = ?, mp_tipo = ?, mp_onzas = ?, mp_genero = ?, mp_precio_compra = ?, mp_precio_venta = ?, mp_descuentro = ?, mp_precio_descto = ?, mp_oferta = ?, mp_stock = ?"
+                + "WHERE mp_idprod ="+_id;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, prd.getMarca());
+            ps.setString(2, prd.getNombre_Prd());
+            ps.setString(3, prd.getReferencia());
+            ps.setString(4, prd.getAno_Inic());
+            ps.setString(5, prd.getFmlaolfat());
+            ps.setString(6, prd.getNota_Salida());
+            ps.setString(7, prd.getNota_Corazon());
+            ps.setString(8, prd.getNota_Fondo());
+            ps.setString(9, prd.getCategoria());
+            ps.setInt(10, prd.getTipo());
+            ps.setInt(11, prd.getOnzas());
+            ps.setString(12, prd.getGenero());
+            ps.setDouble(13, prd.getPrecio_Compra());
+            ps.setDouble(14, prd.getPrecio_Venta());
+            ps.setDouble(15, prd.getDescuento());
+            ps.setDouble(16, prd.getPrecio_Descuento());
+            ps.setString(17, prd.getOferta());
+            ps.setInt(18, prd.getStock());
+            ps.executeUpdate();
+            //Verificar código de error del Executequery
+        } catch (Exception e) {
+
+        }      
+    }
     
     
     

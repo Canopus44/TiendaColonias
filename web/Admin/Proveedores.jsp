@@ -22,6 +22,10 @@
                     <div class="card-body">
                         <form action="Controlador?menu=Proveedor" method="POST">
                             <div class="form-group">
+                                <label>ID Proveedor : </label>
+                                <input type="text" readonly="readonly" value="${provedor.getId_Proveedor()}" name="txtID" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label>Nombre: </label>
                                 <input type="text" value="${provedor.getNombre_Proveedor()}" name="txtNombreProveedor" class="form-control">
                             </div>

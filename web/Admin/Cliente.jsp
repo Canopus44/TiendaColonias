@@ -22,6 +22,10 @@
                     <div class="card-body">
                         <form action="Controlador?menu=Cliente" method="POST">
                             <div class="form-group">
+                                <label>ID Cliente : </label>
+                                <input type="text" readonly="readonly" value="${cliente.getId_Cl()}" name="txtID" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label>Correo Electronico : </label>
                                 <input type="text"value="${cliente.getEmail()}" name="txtcorreo" class="form-control">
                             </div>
@@ -63,10 +67,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Contraseña: </label>
-                                <input type="password" name="txtpassword" class="form-control">
-                            </div>   
+                                <input type="password" name="txtpassword" class="form-control">                                
+                            </div> 
                             <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                             
                         </form>
                     </div> 
                 </div>

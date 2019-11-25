@@ -77,7 +77,7 @@ public class ClienteDAO {
         return r;
     }
 
-    public Cliente listarId(int id) {
+    public Cliente listarId(int id) { // Este listar tambien sirve para buscar por id
         Cliente cl = new Cliente();
         String sql = "select * from maestro_clientes where mc_idcl=" + id;
         try {
@@ -122,98 +122,33 @@ public class ClienteDAO {
 
     }
 
-    public void Actualizar(int id, int doc, String tipoId, String email, String tel,
-            String dir, String Cod_postal, String ciudad, String depto,
-            String pais, String pswd, String foto, String rol, String des) {
-
-        String[] Campos = {"mc_email", "mc_telefono", "mc_direcc", "mc_codpostal",
-            "mc_ciudad", "mc_depto", "mc_pais", "mc_pswd", "mc_foto", "mc_descuento"};
-
-        int i = 0;
-
-        String sql = "udpate maestro_clientes set ";
-
-        //Realizo un Script Dinámico SQL para actualizar únicamente los campos
-        //que vengan con datos. Los vacíos no se actualizan.
-        //Concaneto el nombre del campo en la tabla + el valor que llega por parámetro
-        //mc_campo = par_value
-        if (!" ".equals(email)) {
-            i = Buscar(Campos, "mc_email", "email");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-
-        }
-        if (!" ".equals(tel)) {
-            i = Buscar(Campos, "mc_telefono", "tel");
-
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-
-        }
-        if (!" ".equals(dir)) {
-            i = Buscar(Campos, "mc_email", "dir");
-            sql = sql = sql.concat(sql + ", " + Campos[i] + "=?");
-
-        }
-        if (!" ".equals(Cod_postal)) {
-            i = Buscar(Campos, "mc_codpostal", "Cod_postal");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(ciudad)) {
-            i = Buscar(Campos, "mc_ciudad", "Campos");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(depto)) {
-            i = Buscar(Campos, "mc_depto", "depto");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(pais)) {
-            i = Buscar(Campos, "mc_pais", "pais");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(pswd)) {
-            i = Buscar(Campos, "mc_pswd", "pswd");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(foto)) {
-            i = Buscar(Campos, "mc_foto", "foto");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-        if (!" ".equals(rol)) {
-            i = Buscar(Campos, "mc_rol", "rol");
-            sql = sql.concat(sql + ", " + Campos[i] + "=?");
-        }
-
-        //Eliminar la primera coma "," de sobra en el script
-        sql = sql.replaceFirst(",", " ");
-        
+    public void Actualizar(Cliente cl, int idc) {
+        String sql = "UPDATE  bd_tienda.maestro_clientes "
+                + "SET mc_nrodoc = ? , mc_tpoid = ?, mc_nombre = ?, mc_apellido = ?, mc_email = ?, mc_telefono = ?, mc_direcc = ?, mc_codpostal = ?, mc_ciudad = ?, mc_depto = ?, mc_pais = ?, mc_pswd = ?, mc_foto = ?, mc_rol = ?, mc_descuento = ?"
+                + "WHERE mc_idcl ="+ idc;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            for (int J = 0; J < i; J++) {
-                ps.setString(J, Nom_campo[J]);
-            }
-
+            ps.setInt(1, cl.getNro_Doc());
+            ps.setString(2, cl.getTpo_Id());
+            ps.setString(3, cl.getNombre());
+            ps.setString(4, cl.getApellido());
+            ps.setString(5, cl.getEmail());
+            ps.setString(6, cl.getTelefono());
+            ps.setString(7, cl.getDirecc());
+            ps.setString(8, cl.getCod_Postal());
+            ps.setString(9, cl.getCiudad());
+            ps.setString(10, cl.getDepto());
+            ps.setString(11, cl.getPais());
+            ps.setString(12, cl.getPswd());
+            ps.setString(13, cl.getFoto());
+            ps.setString(14, cl.getRol());
+            ps.setString(15, cl.getDescuento());
+            ps.executeUpdate();
             //Verificar código de error del Executequery
         } catch (Exception e) {
 
         }
-
-    }
-
-    public int Buscar(String[] vector, String Busqueda, String NomCampo) {
-        //Encuentro la posición en la cuál se encuentra el parámetro BÚSQUEDA.
-
-        int pos = 0;
-        for (int i = 0; i < vector.length; i++) {
-            if (vector[i].equals(Busqueda)) {
-                pos = i;
-                //Guardo el nombre del parámetro del método Actualizar
-                Nom_campo[i] = NomCampo;
-                break;
-            }
-        }
-
-        return pos;
-
     }
 
     public List Listar() {
@@ -255,9 +190,5 @@ public class ClienteDAO {
             ps.executeUpdate();
         } catch (Exception e) {
         }
-    }
-
-    public void Actualizar(String _nombreProveedor, String _ciudad, String _departamento, String _codpostal, String _provincia, String _pais, String _numTelefono, String _numFax, String _email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }    
 }
