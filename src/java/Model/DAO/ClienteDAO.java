@@ -17,6 +17,36 @@ public class ClienteDAO {
     String[] Nom_campo;
     private int r;
 
+    public Cliente Buscar(int cc) {
+        Cliente cl = new Cliente();
+        String sql = "select * from maestro_clientes where mc_nrodoc =" + cc;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                cl.setId_Cl(rs.getInt(1));
+                cl.setNro_Doc(rs.getInt(2));
+                cl.setTpo_Id(rs.getString(3));
+                cl.setNombre(rs.getString(4));
+                cl.setApellido(rs.getString(5));
+                cl.setEmail(rs.getString(6));
+                cl.setTelefono(rs.getString(7));
+                cl.setDirecc(rs.getString(8));
+                cl.setCod_Postal(rs.getString(9));
+                cl.setCiudad(rs.getString(10));
+                cl.setDepto(rs.getString(11));
+                cl.setPais(rs.getString(12));
+                cl.setPswd(rs.getString(13));
+                cl.setFoto(rs.getString(14));
+                cl.setRol(rs.getString(15));
+                cl.setDescuento(rs.getString(16));
+            }
+        } catch (Exception e) {
+        }
+        return cl;
+    }
+
     public Cliente Validar(String correo, String password) {
         Cliente cl = new Cliente();
         String sql = "select * from maestro_clientes where mc_email=? and mc_pswd=?";
@@ -107,25 +137,10 @@ public class ClienteDAO {
         return cl;
     }
 
-    public void Eliminar(String email, int documento) {
-
-        String sql = "delete from maestro_clientes where mc_email=? and mc_nrodoc=?";
-        try {
-            con = cn.Conexion();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setInt(2, documento);
-            //Verificar código de error del Executequery
-        } catch (Exception e) {
-
-        }
-
-    }
-
     public void Actualizar(Cliente cl, int idc) {
         String sql = "UPDATE  bd_tienda.maestro_clientes "
                 + "SET mc_nrodoc = ? , mc_tpoid = ?, mc_nombre = ?, mc_apellido = ?, mc_email = ?, mc_telefono = ?, mc_direcc = ?, mc_codpostal = ?, mc_ciudad = ?, mc_depto = ?, mc_pais = ?, mc_pswd = ?, mc_foto = ?, mc_rol = ?, mc_descuento = ?"
-                + "WHERE mc_idcl ="+ idc;
+                + "WHERE mc_idcl =" + idc;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -182,13 +197,14 @@ public class ClienteDAO {
         }
         return lista;
     }
-    public void eliminar(int id){
-        String sql="delete from maestro_clientes where mc_idcl="+id;
+
+    public void eliminar(int id) {
+        String sql = "delete from maestro_clientes where mc_idcl=" + id;
         try {
-            con=cn.Conexion();
-            ps=con.prepareStatement(sql);
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
         }
-    }    
+    }
 }

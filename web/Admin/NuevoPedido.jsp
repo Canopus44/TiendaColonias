@@ -32,11 +32,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtCodigoCliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
+                                    <input type="text" name="txtCodigoCliente" value="${cliente.getNro_Doc()}" class="form-control" placeholder="Codigo">
                                     <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Nombre Cliente" readonly="readonly" class="form-control">
+                                    <input type="text" name="nombrescliente" value="${cliente.getNombre()}  ${cliente.getApellido()} " placeholder="Nombre Cliente" readonly="readonly" class="form-control">
                                 </div>                           
                             </div>
                             <!--DATOS DEL PRODUCTO-->
@@ -45,16 +45,16 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
+                                    <input type="text" name="txtCodigoProducto" value="${producto.getId_Prod()}" class="form-control" placeholder="Codigo">
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>                           
                                 <div class="col-sm-6">
-                                    <input type="text" name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control" readonly="readonly">
+                                    <input type="text" name="nomproducto" value="${producto.getNombre_Prd()}" placeholder="Datos Producto" class="form-control" readonly="readonly">
                                 </div>  
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="precio" value="${producto.getPre()}" class="form-control" placeholder="S/.0.00">                                
+                                    <input type="text" name="precio" value="${producto.getPrecio_Venta()}" class="form-control" placeholder="S/.0.00">                                
                                 </div>                           
                                 <div class="col-sm-3">
                                     <input type="number" min="1" max="99" name="cant" placeholder="0" class="form-control">

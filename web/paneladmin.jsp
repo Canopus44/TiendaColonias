@@ -25,7 +25,7 @@
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Venta" target="myFrame">Ventas</a>
                     </li>
                     <li  class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevoPedido" target="myFrame">Nuevo Pedido</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevoPedido&accion=default" target="myFrame">Nuevo Pedido</a>
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>

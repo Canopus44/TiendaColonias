@@ -30,7 +30,7 @@ public class Controlador extends HttpServlet {
     ShopCartDAO shopDAO = new ShopCartDAO();
     Proveedor prvd = new Proveedor();
     ProveedorDAO prvdDAO = new ProveedorDAO();
-    int idc, idp, idshop,idPrvd;
+    int idc, idp, idshop, idPrvd;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,7 +42,24 @@ public class Controlador extends HttpServlet {
         if (menu.equals("shop")) {
             request.getRequestDispatcher("shop.jsp").forward(request, response);
         }
-
+        if (menu.equals("NuevoPedido")) {
+            switch (accion) {
+                case "BuscarCliente":
+                    int cc = Integer.parseInt(request.getParameter("txtCodigoCliente"));
+                    cl.setNro_Doc(cc);
+                    cl = clDAO.Buscar(cc);
+                    request.setAttribute("cliente", cl);
+                    break;
+                    
+                case "BuscarProducto":
+                    int id = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    prd.setId_Prod(id);
+                    prd = prdDAO.listarId(id);
+                    request.setAttribute("producto", prd);
+                    break;
+            }
+            request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
+        }
         if (menu.equals("Producto")) {
             switch (accion) {
                 case "Listar":
@@ -50,7 +67,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("productos", lista);
                     break;
                 case "Agregar":
-                    
+
                     String marca = request.getParameter("txtMarca");
                     String producto = request.getParameter("txtNomProducto");
                     String referencia = request.getParameter("txtReferencia");
@@ -109,7 +126,7 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Actualizar":
-                    int  _id = Integer.parseInt(request.getParameter("txtID"));
+                    int _id = Integer.parseInt(request.getParameter("txtID"));
                     String _marca = request.getParameter("txtMarca");
                     String _producto = request.getParameter("txtNomProducto");
                     String _referencia = request.getParameter("txtReferencia");
@@ -128,7 +145,7 @@ public class Controlador extends HttpServlet {
                     int _stock = Integer.parseInt(request.getParameter("txtStock"));
                     double _precioDescuento = 0;
                     double _precioCompra = 0;
-                    
+
                     prd.setMarca(_marca);
                     prd.setNombre_Prd(_producto);
                     prd.setReferencia(_referencia);
@@ -147,9 +164,8 @@ public class Controlador extends HttpServlet {
                     prd.setStock(_stock);
                     prd.setPrecio_Descuento(_precioDescuento);
                     prd.setPrecio_Compra(_precioCompra);
-                    
-                    
-                    prdDAO.Actualizar(prd,_id);
+
+                    prdDAO.Actualizar(prd, _id);
                     break;
                 default:
                     throw new AssertionError();
@@ -159,12 +175,7 @@ public class Controlador extends HttpServlet {
 
         if (menu.equals("Venta")) {
             request.getRequestDispatcher("Admin/Ventas.jsp").forward(request, response);
-        }
-
-        if (menu.equals("NuevoPedido")) {
-            
-            request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
-        }
+        }       
 
         if (menu.equals("Cliente")) {
             switch (accion) {
@@ -217,7 +228,7 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "Actualizar":
-                    int  _id = Integer.parseInt(request.getParameter("txtID"));                    
+                    int _id = Integer.parseInt(request.getParameter("txtID"));
                     String _documento = request.getParameter("txtdocumento");
                     int _doc = Integer.parseInt(_documento);
                     String _tipoId = "CC";
@@ -234,7 +245,7 @@ public class Controlador extends HttpServlet {
                     String _foto = " ";
                     String _rol = "user";
                     String _des = "0";
-                    
+
                     cl.setNro_Doc(_doc);
                     cl.setTpo_Id(_tipoId);
                     cl.setNombre(_nombre);
@@ -249,10 +260,10 @@ public class Controlador extends HttpServlet {
                     cl.setFoto(_foto);
                     cl.setRol(_rol);
                     cl.setDescuento(_des);
-                    cl.setDepto(_depto);                   
-                    
-                    clDAO.Actualizar(cl,_id);
-                    
+                    cl.setDepto(_depto);
+
+                    clDAO.Actualizar(cl, _id);
+
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
                 case "Eliminar":
@@ -316,7 +327,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("proveedor", lista);
                     break;
                 case "Agregar":
-                    String nombreProveedor = request.getParameter("txtNombreProveedor");                    
+                    String nombreProveedor = request.getParameter("txtNombreProveedor");
                     String ciudad = request.getParameter("txtCiudad");
                     String departamento = request.getParameter("txtDepartamento");
                     String codpostal = request.getParameter("txtCodPostal");
@@ -325,7 +336,6 @@ public class Controlador extends HttpServlet {
                     String numTelefono = request.getParameter("txtCodPostal");
                     String numFax = request.getParameter("txtNumFax");
                     String email = request.getParameter("txtEmail");
-                    
 
                     prvd.setNombre_Proveedor(nombreProveedor);
                     prvd.setCiudad(ciudad);
@@ -349,8 +359,8 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "Actualizar":
-                    int  _id = Integer.parseInt(request.getParameter("txtID")); 
-                    String _nombreProveedor = request.getParameter("txtNombreProveedor");                    
+                    int _id = Integer.parseInt(request.getParameter("txtID"));
+                    String _nombreProveedor = request.getParameter("txtNombreProveedor");
                     String _ciudad = request.getParameter("txtCiudad");
                     String _departamento = request.getParameter("txtDepartamento");
                     String _codpostal = request.getParameter("txtCodPostal");
@@ -359,7 +369,7 @@ public class Controlador extends HttpServlet {
                     String _numTelefono = request.getParameter("txtCodPostal");
                     String _numFax = request.getParameter("txtNumFax");
                     String _email = request.getParameter("txtEmail");
-                    
+
                     prvd.setNombre_Proveedor(_nombreProveedor);
                     prvd.setCiudad(_ciudad);
                     prvd.setDepartamento(_departamento);
@@ -369,8 +379,8 @@ public class Controlador extends HttpServlet {
                     prvd.setNum_telefono(_numTelefono);
                     prvd.setNum_fax(_numFax);
                     prvd.setEmail(_email);
-                    
-                    prvdDAO.Actualizar(prvd,_id);
+
+                    prvdDAO.Actualizar(prvd, _id);
 
                     request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
                     break;
