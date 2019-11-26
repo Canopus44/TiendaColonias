@@ -11,9 +11,9 @@ public class Venta {
     String DescripcionP;
     String fecha;
     String estado;
-    double precio;
-    double subtotal;
-    double monto;
+    Double precio;
+    Double subtotal;
+    Double monto;
 
     public Venta() {
     }
@@ -105,27 +105,27 @@ public class Venta {
         this.estado = estado;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
-    public double getSubtotal() {
+    public Double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(double subtotal) {
+    public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
 
-    public double getMonto() {
+    public Double getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
     

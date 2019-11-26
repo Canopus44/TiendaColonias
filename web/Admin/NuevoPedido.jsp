@@ -3,7 +3,7 @@
     Created on : 6/10/2019, 01:26:17 PM
     Author     : canop
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -101,7 +101,7 @@
                                         <td>${list.getDescripcionP()}</td>
                                         <td>${list.getPrecio()}</td>
                                         <td>${list.getCantidad()}</td>
-                                        <td>${list.setSubtotal()}</td>
+                                        <td>${list.getSubtotal()}</td>
                                         <td class="d-flex">
                                             <a href="#" class="btn btn-warning">Editar</a>
                                             <a href="#" class="btn btn-danger" style="margin-left: 5px">Delete</a>

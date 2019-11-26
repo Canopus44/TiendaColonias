@@ -37,7 +37,7 @@ public class Controlador extends HttpServlet {
     List<Venta>lista=new ArrayList<>();
     int item,cod,cant;
     String descripcion;
-    double precio,subtotal; 
+    double precio,subtotal,totalPagar; 
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -57,6 +57,8 @@ public class Controlador extends HttpServlet {
                     cl.setNro_Doc(cc);
                     cl = clDAO.Buscar(cc);
                     request.setAttribute("cliente", cl);
+                    request.setAttribute("producto", prd);
+                    request.setAttribute("lista", lista);
                     break;
                     
                 case "BuscarProducto":
@@ -65,6 +67,7 @@ public class Controlador extends HttpServlet {
                     prd = prdDAO.listarId(id);
                     request.setAttribute("producto", prd);
                     request.setAttribute("lista", lista);
+                    request.setAttribute("cliente", cl);
                     break;
                     
                 case "Agregar":
@@ -74,12 +77,18 @@ public class Controlador extends HttpServlet {
                     precio=Double.parseDouble(request.getParameter("precio"));
                     cant=Integer.parseInt(request.getParameter("cant"));
                     subtotal = precio * cant;
-                    v = new Venta();
+                    v = new Venta();                    
                     v.setItem(item);
                     v.setId(cod);
+                    v.setCantidad(cant);
+                    v.setPrecio(precio);
                     v.setDescripcionP(descripcion);
                     v.setSubtotal(subtotal);
                     lista.add(v);
+                    for (int i = 0; i < lista.size(); i++) {
+                        totalPagar = totalPagar + lista.get(i).getSubtotal();
+                    }
+                    request.setAttribute("totalpagar", totalPagar);
                     request.setAttribute("lista", lista);
                     break;
             }
