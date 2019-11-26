@@ -8,6 +8,7 @@ import Modelo.Cliente;
 import Modelo.Producto;
 import Modelo.Proveedor;
 import Modelo.ShopCart;
+import Modelo.Venta;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +31,15 @@ public class Controlador extends HttpServlet {
     ShopCartDAO shopDAO = new ShopCartDAO();
     Proveedor prvd = new Proveedor();
     ProveedorDAO prvdDAO = new ProveedorDAO();
+    Venta v = new Venta();    
     int idc, idp, idshop, idPrvd;
 
+    List<Venta>lista=new ArrayList<>();
+    int item,cod,cant;
+    String descripcion;
+    double precio,subtotal; 
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
@@ -56,6 +64,23 @@ public class Controlador extends HttpServlet {
                     prd.setId_Prod(id);
                     prd = prdDAO.listarId(id);
                     request.setAttribute("producto", prd);
+                    request.setAttribute("lista", lista);
+                    break;
+                    
+                case "Agregar":
+                    item++;
+                    cod = prd.getId_Prod();
+                    descripcion = request.getParameter("nomproducto");
+                    precio=Double.parseDouble(request.getParameter("precio"));
+                    cant=Integer.parseInt(request.getParameter("cant"));
+                    subtotal = precio * cant;
+                    v = new Venta();
+                    v.setItem(item);
+                    v.setId(cod);
+                    v.setDescripcionP(descripcion);
+                    v.setSubtotal(subtotal);
+                    lista.add(v);
+                    request.setAttribute("lista", lista);
                     break;
             }
             request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);

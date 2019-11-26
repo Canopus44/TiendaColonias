@@ -97,11 +97,11 @@
                                 <c:forEach var="list" items="${lista}">
                                     <tr class="text-center">
                                         <td>${list.getItem()}</td>
-                                        <td>${list.getIdproducto()}</td>
+                                        <td>${list.getIdProducto()}</td>
                                         <td>${list.getDescripcionP()}</td>
                                         <td>${list.getPrecio()}</td>
                                         <td>${list.getCantidad()}</td>
-                                        <td>${list.getSubtotal()}</td>
+                                        <td>${list.setSubtotal()}</td>
                                         <td class="d-flex">
                                             <a href="#" class="btn btn-warning">Editar</a>
                                             <a href="#" class="btn btn-danger" style="margin-left: 5px">Delete</a>
