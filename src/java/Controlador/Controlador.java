@@ -334,7 +334,12 @@ public class Controlador extends HttpServlet {
 
                     request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
                     break;
-
+                case "details":
+//                    idshop = Integer.parseInt(request.getParameter("id"));
+//                    Producto proddetail = prdDAO.listarId(idshop);
+//                    request.setAttribute("proddetail", proddetail);
+                    request.getRequestDispatcher("product-details.jsp").forward(request, response);
+                    break;
                 default:
                     throw new AssertionError();
             }
