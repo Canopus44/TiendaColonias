@@ -1,3 +1,9 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@page import="Model.DAO.CatalogoDAO"%>
+<%@page import="Modelo.Producto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.*"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>

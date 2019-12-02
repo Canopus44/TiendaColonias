@@ -65,12 +65,13 @@ public class Controlador extends HttpServlet {
                     int id = Integer.parseInt(request.getParameter("txtCodigoProducto"));
                     prd.setId_Prod(id);
                     prd = prdDAO.listarId(id);
-                    request.setAttribute("producto", prd);
-                    request.setAttribute("lista", lista);
                     request.setAttribute("cliente", cl);
+                    request.setAttribute("producto", prd);
+                    request.setAttribute("lista", lista);                    
                     break;
                     
                 case "Agregar":
+                    request.setAttribute("cliente", cl);
                     item++;
                     cod = prd.getId_Prod();
                     descripcion = request.getParameter("nomproducto");
@@ -200,6 +201,7 @@ public class Controlador extends HttpServlet {
                     prd.setPrecio_Compra(_precioCompra);
 
                     prdDAO.Actualizar(prd, _id);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 default:
                     throw new AssertionError();

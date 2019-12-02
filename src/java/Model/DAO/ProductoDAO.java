@@ -162,9 +162,11 @@ public class ProductoDAO {
     }
 
     public void Actualizar(Producto prd, int _id) {
-        String sql = "UPDATE  b_tienda.maestro_productos "
-                + " SET mp_marca = ?, mp_nombreprd = ? , mp_referencia= ?, mp_anoinic = ?, mp_fmlaolfat = ?, mp_nota_salida = ?, mp_nota_corazon = ?, mp_nota_fondo = ?, mp_categoria = ?, mp_tipo = ?, mp_onzas = ?, mp_genero = ?, mp_precio_compra = ?, mp_precio_venta = ?, mp_descuentro = ?, mp_precio_descto = ?, mp_oferta = ?, mp_stock = ?"
-                + "WHERE mp_idprod ="+_id;
+        String sql = "UPDATE  bd_tienda.maestro_productos "
+                + " SET mp_marca = ?, mp_nombreprd = ? , mp_referencia= ?, mp_anoinic = ?, mp_fmlaolfat = ?, mp_nota_salida = ?, mp_nota_corazon = ?"
+                + ", mp_nota_fondo = ?, mp_categoria = ?, mp_tipo = ?, mp_onzas = ?, mp_genero = ?, mp_precio_compra = ?, mp_precio_venta = ?, "
+                + "mp_descuentro = ?, mp_precio_descto = ?, mp_oferta = ?, mp_stock = ? "
+                + " WHERE mp_idprod ="+_id;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
