@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="Model.DAO.CatalogoDAO"%>
 <%@page import="Modelo.Producto"%>
 <%@page import="java.util.ArrayList"%>
@@ -246,6 +246,7 @@
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
                             <h2 class="title text-center">Productos disponibles</h2>
+                            <%  %>
                             <%int count=0;  int count1=0;%>
                             <c:forEach var="prd" items="${catalog}">
                                  <%if(count == 0){%>
