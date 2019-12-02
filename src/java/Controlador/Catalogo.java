@@ -26,13 +26,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Catalogo extends HttpServlet {
     Producto prd = new Producto();
     ProductoDAO prdDAO = new ProductoDAO();
-     
+    List<Producto> productos = new ArrayList<>();
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           String menu = request.getParameter("menu");
+            String menu = request.getParameter("menu");
             try {
-                 List catalog = prdDAO.Listar();
-                  request.setAttribute("catalog", catalog);
+                 productos = prdDAO.Listar();
+                  request.setAttribute("productos", productos);
                   request.getRequestDispatcher("index.jsp").forward(request, response);
 
                   

@@ -174,11 +174,7 @@
                                 <tr>
                                     <td >
                                         <img src="${prod.getbd_imgprod()}" alt="" width="130" height="135">
-                                    </td>
-                                    <td >
-                                        <h4>${prod.getbd_nombreprod()}</h4>
-                                        <p>Web ID: 1089772</p>
-                                    </td>
+                                    </td>                                   
                                     <td >
                                         <h4>$${prod.getbd_precioprod()}</h4>
                                     </td>
@@ -250,7 +246,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <a class="btn btn-default update" href="">Pagar</a>
-                            <a class="btn check_out" href="">Ir al catalogo</a>
+                            <a class="btn check_out" href="Controlador?menu=Catalogo">Ir al catalogo</a>
 
                         </div>
                     </div>

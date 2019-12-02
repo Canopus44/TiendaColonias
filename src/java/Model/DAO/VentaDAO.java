@@ -51,7 +51,7 @@ public class VentaDAO {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, ve.getIdCliente());
-            ps.setInt(2, ve.getIdempleado());
+            ps.setInt(2, ve.getIdPago());
             ps.setString(3, ve.getNumSerie());
             ps.setString(4, ve.getFecha());
             ps.setDouble(5, ve.getMonto());

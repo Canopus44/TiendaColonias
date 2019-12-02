@@ -9,7 +9,7 @@ public class Carrito {
         this.total_Carrito = total_Carrito;
     }  
 
-    public String getId_Carrito() {
+    public String getId_Carrito() { 
         return id_Carrito;
     }
 

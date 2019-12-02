@@ -33,25 +33,26 @@ public class Controlador extends HttpServlet {
     ShopCartDAO shopDAO = new ShopCartDAO();
     Proveedor prvd = new Proveedor();
     ProveedorDAO prvdDAO = new ProveedorDAO();
-    Venta v = new Venta(); 
+    Venta v = new Venta();
     VentaDAO vDAO = new VentaDAO();
     int idc, idp, idshop, idPrvd;
-    
-    List<Venta>lista=new ArrayList<>();   
-    int item,cod,cant;
-    String descripcion,numeroserie="";
-    double precio,subtotal,totalPagar; 
-    
-    
+    List<Producto> productos = new ArrayList<>();
+    List<Venta> lista = new ArrayList<>();
+    int item, cod, cant;
+    String descripcion, numeroserie = "";
+    double precio, subtotal, totalPagar;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-        
+
         if (menu.equals("admin")) {
             request.getRequestDispatcher("paneladmin.jsp").forward(request, response);
         }
         if (menu.equals("shop")) {
+            productos = prdDAO.Listar();
+            request.setAttribute("productos", productos);
             request.getRequestDispatcher("shop.jsp").forward(request, response);
         }
         if (menu.equals("NuevoPedido")) {
@@ -65,7 +66,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("producto", prd);
                     request.setAttribute("lista", lista);
                     break;
-                    
+
                 case "BuscarProducto":
                     int id = Integer.parseInt(request.getParameter("txtCodigoProducto"));
                     prd.setId_Prod(id);
@@ -73,19 +74,19 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("nserie", numeroserie);
                     request.setAttribute("cliente", cl);
                     request.setAttribute("producto", prd);
-                    request.setAttribute("lista", lista);                    
+                    request.setAttribute("lista", lista);
                     break;
-                    
+
                 case "Agregar":
                     request.setAttribute("nserie", numeroserie);
                     request.setAttribute("cliente", cl);
                     item++;
                     cod = prd.getId_Prod();
                     descripcion = request.getParameter("nomproducto");
-                    precio=Double.parseDouble(request.getParameter("precio"));
-                    cant=Integer.parseInt(request.getParameter("cant"));
+                    precio = Double.parseDouble(request.getParameter("precio"));
+                    cant = Integer.parseInt(request.getParameter("cant"));
                     subtotal = precio * cant;
-                    v = new Venta();                    
+                    v = new Venta();
                     v.setItem(item);
                     v.setIdProducto(cod);
                     v.setCantidad(cant);
@@ -100,18 +101,17 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("lista", lista);
                     break;
                 case "GenerarVenta":
-                    
+
                     for (int i = 0; i < lista.size(); i++) {
-                        Producto pr=new Producto();
-                        int cantidad=lista.get(i).getCantidad();
-                        int idproducto=lista.get(i).getIdProducto();
-                        ProductoDAO aO=new ProductoDAO();
-                        pr=aO.listarId(idproducto);
-                        int sac=pr.getStock()-cantidad;
+                        Producto pr = new Producto();
+                        int cantidad = lista.get(i).getCantidad();
+                        int idproducto = lista.get(i).getIdProducto();
+                        ProductoDAO aO = new ProductoDAO();
+                        pr = aO.listarId(idproducto);
+                        int sac = pr.getStock() - cantidad;
                         aO.ActualizarStock(idproducto, sac);
                     }
-                    
-                    
+
                     v.setIdCliente(cl.getId_Cl());
                     v.setNumSerie(numeroserie);
                     v.setFecha("2019-12-01");
@@ -127,24 +127,24 @@ public class Controlador extends HttpServlet {
                         v.setPrecio(lista.get(i).getPrecio());
                         vDAO.guardarDetalleventas(v);
                     }
-                    lista=new ArrayList<>();
+                    lista = new ArrayList<>();
                     break;
                 default:
-                     v = new Venta();
+                    v = new Venta();
                     lista = new ArrayList<>();
                     item = 0;
-                    totalPagar = 0.0;    
+                    totalPagar = 0.0;
                     numeroserie = vDAO.GenerarSerie();
-                    if (numeroserie==null) {
+                    if (numeroserie == null) {
                         numeroserie = "00000001";
                         request.setAttribute("nserie", numeroserie);
-                    }else{
-                        int incrementar = Integer.parseInt(numeroserie);    
+                    } else {
+                        int incrementar = Integer.parseInt(numeroserie);
                         GenerarSerie gs = new GenerarSerie();
-                        numeroserie=gs.NumeroSerie(incrementar);
+                        numeroserie = gs.NumeroSerie(incrementar);
                         request.setAttribute("nserie", numeroserie);
                     }
-                    request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);                    
+                    request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
             }
             request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
         }
@@ -155,7 +155,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("productos", lista);
                     break;
                 case "Agregar":
-                    
+
                     String marca = request.getParameter("txtMarca");
                     String producto = request.getParameter("txtNomProducto");
                     String referencia = request.getParameter("txtReferencia");
@@ -264,7 +264,7 @@ public class Controlador extends HttpServlet {
 
         if (menu.equals("Venta")) {
             request.getRequestDispatcher("Admin/Ventas.jsp").forward(request, response);
-        }       
+        }
 
         if (menu.equals("Cliente")) {
             switch (accion) {
@@ -366,54 +366,7 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Admin/Cliente.jsp").forward(request, response);
         }
-        if (menu.equals("Catalogo")) {
-            List catalog = prdDAO.Listar();
-            request.setAttribute("catalog", catalog);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-            switch (accion) {
-                case "Agregar":
-                    idshop = Integer.parseInt(request.getParameter("id"));
-                    Producto shopp = prdDAO.listarId(idshop);
-                    String nombre = shopp.getNombre_Prd();
-                    Double precio = shopp.getPrecio_Compra();
-                    String imagen = shopp.getimagen();
-                    Double total = 1.1;
-                    int cantidad = 1;
-                    shopcart.setbd_totalcarrito(total);
-                    shopcart.setbd_nombreprod(nombre);
-                    shopcart.setbd_imgprod(imagen);
-                    shopcart.setbd_precioprod(precio);
-                    shopcart.setbd_cantidad(cantidad);
 
-                    shopDAO.AddShop(shopcart);
-
-                    request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
-                    break;
-                case "details":
-//                    idshop = Integer.parseInt(request.getParameter("id"));
-//                    Producto proddetail = prdDAO.listarId(idshop);
-//                    request.setAttribute("proddetail", proddetail);
-                    request.getRequestDispatcher("product-details.jsp").forward(request, response);
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-        }
-        if (menu.equals("ShopCart")) {
-            List ShopList = shopDAO.Listar();
-            request.setAttribute("shoplist", ShopList);
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-            switch (accion) {
-                case "Eliminar":
-                    idshop = Integer.parseInt(request.getParameter("id"));
-                    shopcart.setbd_idcarrito(idshop);
-                    shopDAO.eliminar(idshop);
-                    request.getRequestDispatcher("Controlador?menu=ShopCart").forward(request, response);
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-        }
         if (menu.equals("Proveedor")) {
             switch (accion) {
                 case "Listar":
@@ -488,6 +441,54 @@ public class Controlador extends HttpServlet {
                     throw new AssertionError();
             }
             request.getRequestDispatcher("Admin/Proveedores.jsp").forward(request, response);
+        }
+        if (menu.equals("ShopCart")) {
+            List ShopList = shopDAO.Listar();
+            request.setAttribute("shoplist", ShopList);
+            request.getRequestDispatcher("cart.jsp").forward(request, response);
+            switch (accion) {
+                case "Eliminar":
+                    idshop = Integer.parseInt(request.getParameter("id"));
+                    shopcart.setbd_idcarrito(idshop);
+                    shopDAO.eliminar(idshop);
+                    request.getRequestDispatcher("Controlador?menu=ShopCart").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+        }
+        if (menu.equals("Catalogo")) {
+            productos = prdDAO.Listar();
+            request.setAttribute("productos", productos);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            switch (accion) {
+                case "Agregar":
+                    idshop = Integer.parseInt(request.getParameter("id"));
+                    Producto shopp = prdDAO.listarId(idshop);
+                    String nombre = shopp.getNombre_Prd();
+                    Double precioVenta = shopp.getPrecio_Venta();
+                    String imagen = shopp.getimagen();
+                    Double total = 1.1;
+                    int cantidad = 1;
+                    shopcart.setbd_totalcarrito(total);
+                    shopcart.setbd_nombreprod(nombre);
+                    shopcart.setbd_imgprod(imagen);
+                    shopcart.setbd_precioprod(precioVenta);
+                    shopcart.setbd_cantidad(cantidad);
+
+                    shopDAO.AddShop(shopcart);
+
+                    request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
+                    break;
+                case "Detalles":
+//                    idshop = Integer.parseInt(request.getParameter("id"));
+//                    Producto proddetail = prdDAO.listarId(idshop);
+//                    request.setAttribute("proddetail", proddetail);
+                    request.getRequestDispatcher("product-details.jsp").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         }
     }
 

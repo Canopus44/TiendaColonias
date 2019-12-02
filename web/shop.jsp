@@ -1,14 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="Model.DAO.CatalogoDAO"%>
 <%@page import="Modelo.Producto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.*"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -58,12 +58,13 @@
                     </div>
                 </div>
             </div><!--/header_top-->
+
             <div class="header-middle"><!--header-middle-->
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="index.jsp"><img src="images/home/logo.png" alt="" /></a>
+                                <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
                             </div>
                             <div class="btn-group pull-right">
                                 <div class="btn-group">
@@ -76,6 +77,7 @@
                                         <li><a href="">USA</a></li>
                                     </ul>
                                 </div>
+
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                         PESO COL
@@ -91,33 +93,26 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li>
-                                        <c:if test="${usuario.getNombre()!= null}">
                                     <li><div class="dropdown">
-                                            <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                ${usuario.getNombre()}
-                                            </button>
-                                            <div class="dropdown-menu text-center">                                    
-                                                <a class="dropdown-item" href="#">${usuario.getEmail()}</a>                                    
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="index.jsp">Salir</a>
-                                            </div>
-                                        </div></li>
-                                    </c:if>
-                                    </li>
+                                <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ${usuario.getNombre()}
+                                </button>
+                                <div class="dropdown-menu text-center">                                    
+                                    <a class="dropdown-item" href="#">${usuario.getEmail()}</a>                                    
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.jsp">Salir</a>
+                                </div>
+                            </div></li>
                                     <li><a href=""><i class="fa fa-star"></i> Lista de deseos</a></li>
                                     <li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Salida</a></li>
-                                    <li><a href="Controlador?menu=ShopCart" class="active"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-                                    <c:if test="${usuario.getNombre()==null}">
-                                        <li><a href="login.jsp"><i class="fa fa-lock"></i> Ingreso</a></li>
-                                    </c:if>                                    
+                                    <li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Carrito</a></li>                                                                
                                 </ul>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
             </div><!--/header-middle-->
-            <!--Modal CatShop -->
+
             <div class="header-bottom"><!--header-bottom-->
                 <div class="container">
                     <div class="row">
@@ -162,11 +157,13 @@
                 </div>
             </div>
         </header>
+
         <section id="advertisement">
             <div class="container">
                 <img src="images/shop/advertisement.jpg" alt="" />
             </div>
         </section>
+
         <section>
             <div class="container">
                 <div class="row">
@@ -231,8 +228,10 @@
                                         <h4 class="panel-title"><a href="#">Especiales</a></h4>
                                     </div>
                                 </div>
-                            </div><!--/category-productsr-->
-                            <div class="brands_products"><!--brands_products-->
+                            </div>
+                            <!--/category-productsr-->
+                            <div class="brands_products">
+                                <!--brands_products-->
                                 <h2>Brands</h2>
                                 <div class="brands-name">
                                     <ul class="nav nav-pills nav-stacked">
@@ -245,57 +244,58 @@
                                         <li><a href=""> <span class="pull-right">(4)</span>RÃ¶sch creative culture</a></li>
                                     </ul>
                                 </div>
-                            </div><!--/brands_products-->
+                            </div>
+                            <!--/brands_products-->
                             <div class="price-range"><!--price-range-->
                                 <h2>Rango de precio</h2>
                                 <div class="well">
                                     <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
                                     <b>$ 0</b> <b class="pull-right">$ 600,000</b>
                                 </div>
-                            </div><!--/price-range-->
+                            </div>
+                            <!--/price-range-->
                             <div class="shipping text-center"><!--shipping-->
                                 <img src="images/home/home.png" alt="" />
-                            </div><!--/shipping-->
+                            </div>
+                            <!--/shipping-->
                         </div>
                     </div>
+
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
                             <h2 class="title text-center">Productos disponibles</h2>
                             <%  %>
-                            <%int count = 0;
-                                int count1 = 0;%>
+                            <%int count=0;  int count1=0;%>
                             <c:forEach var="prd" items="${productos}">
-                                <%if (count == 0) {%>
-                                <div class="row my-3">
-                                    <div class="col-md-4 ml-md-auto">
-                                        <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src="${prd.getimagen()}" alt="Card image cap" width="170">
-                                            <div class="card-body">
-                                                <div style="color:#ffad41;"><h2 class="card-text">$${prd.getPrecio_Venta()}</h2></div>
-                                                <h5 class="card-title prc">${prd.getNombre_Prd()}</h5>
-                                                <a href="Controlador?menu=Catalogo&accion=Detalles&id=${prd.getId_Prod()}" class="btn btn-primary">Detalles</a>
-                                                <a href="Controlador?menu=Catalogo&accion=Agregar&id=${prd.getId_Prod()}" class="btn btn-primary">Agregar</a>
+                                 <%if(count == 0){%>
+                                    <div class="row my-3">
+                                        <div class="col-md-4 ml-md-auto">
+                                            <div class="card" style="width: 18rem;">
+                                                <img class="card-img-top" src="${prd.getimagen()}" alt="Card image cap" width="170">
+                                                <div class="card-body">
+                                                    <div style="color:#ffad41;"><h2 class="card-text">$${prd.getPrecio_Venta()}</h2></div>
+                                                    <h5 class="card-title prc">${prd.getNombre_Prd()}</h5>
+                                                    <a href="Controlador?menu=Catalogo&accion=Detalles&id=${prd.getId_Prod()}" class="btn btn-primary">Detalles</a>
+                                                    <a href="Controlador?menu=Catalogo&accion=Agregar&id=${prd.getId_Prod()}" class="btn btn-primary">Agregar</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <%} else {%>
-                                    <div class="col-md-4 ml-md-auto">
-                                        <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src="${prd.getimagen()}" alt="Card image cap" width="170" height="145">
-                                            <div class="card-body">
-                                                <div style="color:#ffad41;"><h2 class="card-text">$${prd.getPrecio_Venta()}</h2></div>
-                                                <h5 class="card-title prc">${prd.getNombre_Prd()}</h5>
-                                                <a href="Controlador?menu=Catalogo&accion=Detalles&id=${prd.getId_Prod()}" class="btn btn-primary">Detalles</a>
-                                                <a href="Controlador?menu=Catalogo&accion=Agregar&id=${prd.getId_Prod()}" class="btn btn-primary">Agregar</a>
+                                    <%}else{%>
+                                        <div class="col-md-4 ml-md-auto">
+                                            <div class="card" style="width: 18rem;">
+                                                <img class="card-img-top" src="${prd.getimagen()}" alt="Card image cap" width="170" height="145">
+                                                <div class="card-body">
+                                                    <div style="color:#ffad41;"><h2 class="card-text">$${prd.getPrecio_Venta()}</h2></div>
+                                                    <h5 class="card-title prc">${prd.getNombre_Prd()}</h5>
+                                                    <a href="Controlador?menu=Catalogo&accion=Detalles&id=${prd.getId_Prod()}" class="btn btn-primary">Detalles</a>
+                                                    <a href="Controlador?menu=Catalogo&accion=Agregar&id=${prd.getId_Prod()}" class="btn btn-primary">Agregar</a>
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <%}
-                                        count++;
-                                        if (count == 3) {
-                                        count = 0;%>
-                                </div>
+                                <%}count++; 
+                                    if(count==3){count=0;%>
+                                        </div>
                                 <% }%>
                             </c:forEach>
                             <div class="modal" tabindex="-1" role="dialog">
@@ -339,6 +339,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="footer-widget">
                 <div class="container">
                     <div class="row">
@@ -350,6 +351,7 @@
                                     <li><a href="">Contáctanos</a></li>
                                     <li><a href="">Estado de la orden</a></li>
                                     <li><a href="">Cambiar locación</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -357,6 +359,7 @@
                             <div class="single-widget">
                                 <h2>Opciones</h2>
                                 <ul class="nav nav-pills nav-stacked">
+
                                     <li><a href="">Hombres</a></li>
                                     <li><a href="">Mujeres</a></li>
                                     <li><a href="">Tarjetas de regalo</a></li>
@@ -370,6 +373,7 @@
                                 <ul class="nav nav-pills nav-stacked">
                                     <li><a href="">Términos y condiciones</a></li>
                                     <li><a href="">Política de privacidad</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -405,9 +409,11 @@
                                 </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
@@ -416,7 +422,11 @@
                     </div>
                 </div>
             </div>
+
         </footer><!--/Footer-->
+
+
+
         <script src="js/jquery.js"></script>
         <script src="js/price-range.js"></script>
         <script src="js/jquery.scrollUp.min.js"></script>
