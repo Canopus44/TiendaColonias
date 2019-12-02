@@ -34,7 +34,7 @@ public class Controlador extends HttpServlet {
     Venta v = new Venta();    
     int idc, idp, idshop, idPrvd;
 
-    List<Venta>lista=new ArrayList<>();
+    List<Venta>lista=new ArrayList<>();   
     int item,cod,cant;
     String descripcion;
     double precio,subtotal,totalPagar; 
@@ -44,6 +44,7 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
+        
         if (menu.equals("admin")) {
             request.getRequestDispatcher("paneladmin.jsp").forward(request, response);
         }
@@ -336,7 +337,12 @@ public class Controlador extends HttpServlet {
 
                     request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
                     break;
-
+                case "details":
+//                    idshop = Integer.parseInt(request.getParameter("id"));
+//                    Producto proddetail = prdDAO.listarId(idshop);
+//                    request.setAttribute("proddetail", proddetail);
+                    request.getRequestDispatcher("product-details.jsp").forward(request, response);
+                    break;
                 default:
                     throw new AssertionError();
             }

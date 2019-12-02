@@ -2,12 +2,17 @@ package Model.DAO;
 
 import Config.Conexion;
 import Modelo.Producto;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 
 public class ProductoDAO {
 
@@ -115,7 +120,31 @@ public class ProductoDAO {
         }
         return prd;
     }
-
+    
+    public void listarImg(int id, HttpServletResponse response){
+        String sql = "select * from maestro_productos where mp_idprod=" + id;
+        InputStream inputStream=null;
+        OutputStream outputStream=null;
+        BufferedInputStream bufferedInputStream=null;
+        BufferedOutputStream bufferedOutputStream=null;
+        try {
+            outputStream=response.getOutputStream();
+            con=cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                inputStream = rs.getBinaryStream("mp_imagen");
+            }
+            bufferedInputStream = new BufferedInputStream(inputStream);
+            bufferedOutputStream = new BufferedOutputStream(outputStream);
+            int i=0;
+            while ((i=bufferedInputStream.read())!=-1) {                
+                bufferedOutputStream.write(i);
+            }
+        } catch (Exception e) {
+        }
+    }
+    
     public List Listar() {
         String sql = "select * from maestro_productos";
         List<Producto> lista = new ArrayList<>();
