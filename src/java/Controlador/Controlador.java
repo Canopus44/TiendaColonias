@@ -1,9 +1,11 @@
 package Controlador;
 
+import Config.GenerarSerie;
 import Model.DAO.ClienteDAO;
 import Model.DAO.ProductoDAO;
 import Model.DAO.ProveedorDAO;
 import Model.DAO.ShopCartDAO;
+import Model.DAO.VentaDAO;
 import Modelo.Cliente;
 import Modelo.Producto;
 import Modelo.Proveedor;
@@ -31,12 +33,13 @@ public class Controlador extends HttpServlet {
     ShopCartDAO shopDAO = new ShopCartDAO();
     Proveedor prvd = new Proveedor();
     ProveedorDAO prvdDAO = new ProveedorDAO();
-    Venta v = new Venta();    
+    Venta v = new Venta(); 
+    VentaDAO vDAO = new VentaDAO();
     int idc, idp, idshop, idPrvd;
-
+    
     List<Venta>lista=new ArrayList<>();   
     int item,cod,cant;
-    String descripcion;
+    String descripcion,numeroserie="";
     double precio,subtotal,totalPagar; 
     
     
@@ -57,6 +60,7 @@ public class Controlador extends HttpServlet {
                     int cc = Integer.parseInt(request.getParameter("txtCodigoCliente"));
                     cl.setNro_Doc(cc);
                     cl = clDAO.Buscar(cc);
+                    request.setAttribute("nserie", numeroserie);
                     request.setAttribute("cliente", cl);
                     request.setAttribute("producto", prd);
                     request.setAttribute("lista", lista);
@@ -66,12 +70,14 @@ public class Controlador extends HttpServlet {
                     int id = Integer.parseInt(request.getParameter("txtCodigoProducto"));
                     prd.setId_Prod(id);
                     prd = prdDAO.listarId(id);
+                    request.setAttribute("nserie", numeroserie);
                     request.setAttribute("cliente", cl);
                     request.setAttribute("producto", prd);
                     request.setAttribute("lista", lista);                    
                     break;
                     
                 case "Agregar":
+                    request.setAttribute("nserie", numeroserie);
                     request.setAttribute("cliente", cl);
                     item++;
                     cod = prd.getId_Prod();
@@ -81,7 +87,7 @@ public class Controlador extends HttpServlet {
                     subtotal = precio * cant;
                     v = new Venta();                    
                     v.setItem(item);
-                    v.setId(cod);
+                    v.setIdProducto(cod);
                     v.setCantidad(cant);
                     v.setPrecio(precio);
                     v.setDescripcionP(descripcion);
@@ -93,6 +99,52 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("totalpagar", totalPagar);
                     request.setAttribute("lista", lista);
                     break;
+                case "GenerarVenta":
+                    
+                    for (int i = 0; i < lista.size(); i++) {
+                        Producto pr=new Producto();
+                        int cantidad=lista.get(i).getCantidad();
+                        int idproducto=lista.get(i).getIdProducto();
+                        ProductoDAO aO=new ProductoDAO();
+                        pr=aO.listarId(idproducto);
+                        int sac=pr.getStock()-cantidad;
+                        aO.ActualizarStock(idproducto, sac);
+                    }
+                    
+                    
+                    v.setIdCliente(cl.getId_Cl());
+                    v.setNumSerie(numeroserie);
+                    v.setFecha("2019-12-01");
+                    v.setMonto(totalPagar);
+                    v.setEstado("1");
+                    vDAO.guardarVenta(v);
+                    int idv = Integer.parseInt(vDAO.IdVentas());
+                    for (int i = 0; i < lista.size(); i++) {
+                        v = new Venta();
+                        v.setId(idv);
+                        v.setIdProducto(lista.get(i).getIdProducto());
+                        v.setCantidad(lista.get(i).getCantidad());
+                        v.setPrecio(lista.get(i).getPrecio());
+                        vDAO.guardarDetalleventas(v);
+                    }
+                    lista=new ArrayList<>();
+                    break;
+                default:
+                     v = new Venta();
+                    lista = new ArrayList<>();
+                    item = 0;
+                    totalPagar = 0.0;    
+                    numeroserie = vDAO.GenerarSerie();
+                    if (numeroserie==null) {
+                        numeroserie = "00000001";
+                        request.setAttribute("nserie", numeroserie);
+                    }else{
+                        int incrementar = Integer.parseInt(numeroserie);    
+                        GenerarSerie gs = new GenerarSerie();
+                        numeroserie=gs.NumeroSerie(incrementar);
+                        request.setAttribute("nserie", numeroserie);
+                    }
+                    request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);                    
             }
             request.getRequestDispatcher("Admin/NuevoPedido.jsp").forward(request, response);
         }
@@ -103,7 +155,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("productos", lista);
                     break;
                 case "Agregar":
-
+                    
                     String marca = request.getParameter("txtMarca");
                     String producto = request.getParameter("txtNomProducto");
                     String referencia = request.getParameter("txtReferencia");

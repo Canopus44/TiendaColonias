@@ -6,6 +6,7 @@ public class Venta {
     int item;
     int idCliente;
     int idProducto;
+    int idPago;
     int cantidad;
     String numSerie;
     String DescripcionP;
@@ -18,11 +19,12 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(int id, int item, int idCliente, int idProducto, int cantidad, String numSerie, String DescripcionP, String fecha, String estado, Double precio, Double subtotal, Double monto) {
+    public Venta(int id, int item, int idCliente, int idProducto, int idPago, int cantidad, String numSerie, String DescripcionP, String fecha, String estado, Double precio, Double subtotal, Double monto) {
         this.id = id;
         this.item = item;
         this.idCliente = idCliente;
         this.idProducto = idProducto;
+        this.idPago = idPago;
         this.cantidad = cantidad;
         this.numSerie = numSerie;
         this.DescripcionP = DescripcionP;
@@ -63,6 +65,14 @@ public class Venta {
 
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
+    }
+
+    public int getIdPago() {
+        return idPago;
+    }
+
+    public void setIdPago(int idPago) {
+        this.idPago = idPago;
     }
 
     public int getCantidad() {
@@ -128,6 +138,6 @@ public class Venta {
     public void setMonto(Double monto) {
         this.monto = monto;
     }
-    
-    
+
+   
 }

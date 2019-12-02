@@ -46,16 +46,16 @@ public class VentaDAO {
         return idventas;
     }
     public int guardarVenta(Venta ve){
-        String sql="insert into ventas(IdCliente, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?)";
+        String sql="insert into ventas(IdCliente, idPago, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?,?)";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, ve.getIdCliente());
-            //ps.setInt(2, ve.getIdempleado());
-            ps.setString(2, ve.getNumSerie());
-            ps.setString(3, ve.getFecha());
-            ps.setDouble(4, ve.getMonto());
-            ps.setString(5, ve.getEstado());
+            ps.setInt(2, ve.getIdempleado());
+            ps.setString(3, ve.getNumSerie());
+            ps.setString(4, ve.getFecha());
+            ps.setDouble(5, ve.getMonto());
+            ps.setString(6, ve.getEstado());
             ps.executeUpdate();
         } catch (Exception e) {
         }

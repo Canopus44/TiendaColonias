@@ -87,6 +87,22 @@ public class ProductoDAO {
         }
         return r;
     }
+    
+    public int ActualizarStock(int id, int stock){
+      String sql="UPDATE bd_tienda.maestro_productos "
+              + "SET mp_stock=? "
+              + "WHERE mp_idprod=?";
+      try {
+          con=cn.Conexion();
+          ps=con.prepareStatement(sql);
+          ps.setInt(1, stock);
+          ps.setInt(2, id);
+          ps.executeUpdate();
+      } catch (Exception e) {
+      }
+      return r;
+  }
+     
     public Producto listarId(int id) {
         Producto prd = new Producto();
         String sql = "select * from maestro_productos where mp_idprod=" + id;
@@ -114,7 +130,7 @@ public class ProductoDAO {
                 prd.setPrecio_Descuento(rs.getDouble(17));
                 prd.setOferta(rs.getString(18));
                 prd.setStock(rs.getInt(19));
-                 prd.setimagen(rs.getString(20));
+                prd.setimagen(rs.getString(20));
             }
         } catch (SQLException e) {
         }
