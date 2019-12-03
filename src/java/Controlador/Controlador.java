@@ -444,6 +444,7 @@ public class Controlador extends HttpServlet {
         }
         if (menu.equals("ShopCart")) {
             List ShopList = shopDAO.Listar();
+            request.setAttribute("totalpagar", shopcart.getbd_totalcarrito());
             request.setAttribute("shoplist", ShopList);
             request.getRequestDispatcher("cart.jsp").forward(request, response);
             switch (accion) {
@@ -451,6 +452,8 @@ public class Controlador extends HttpServlet {
                     idshop = Integer.parseInt(request.getParameter("id"));
                     shopcart.setbd_idcarrito(idshop);
                     shopDAO.eliminar(idshop);
+                    totalPagar = totalPagar - shopcart.getbd_totalcarrito();
+                    request.setAttribute("totalpagar", shopcart.getbd_totalcarrito());
                     request.getRequestDispatcher("Controlador?menu=ShopCart").forward(request, response);
                     break;
                 default:
@@ -464,20 +467,21 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "Agregar":
                     idshop = Integer.parseInt(request.getParameter("id"));
-                    Producto shopp = prdDAO.listarId(idshop);
-                    String nombre = shopp.getNombre_Prd();
-                    Double precioVenta = shopp.getPrecio_Venta();
-                    String imagen = shopp.getimagen();
-                    Double total = 1.1;
+                    prd = prdDAO.listarId(idshop);
+                    item = item + 1;
+                    String nombre = prd.getNombre_Prd();
+                    Double precioVenta = prd.getPrecio_Venta();
+                    String imagen = prd.getimagen();
+                    totalPagar = totalPagar + prd.getPrecio_Venta();                    
                     int cantidad = 1;
-                    shopcart.setbd_totalcarrito(total);
+                    shopcart.setbd_totalcarrito(totalPagar);
                     shopcart.setbd_nombreprod(nombre);
                     shopcart.setbd_imgprod(imagen);
                     shopcart.setbd_precioprod(precioVenta);
                     shopcart.setbd_cantidad(cantidad);
-
-                    shopDAO.AddShop(shopcart);
-
+                    shopDAO.AddShop(shopcart);   
+                    
+                    
                     request.getRequestDispatcher("Controlador?menu=Catalogo").forward(request, response);
                     break;
                 case "Detalles":

@@ -159,32 +159,28 @@
                         <thead class="backhead">
                             <tr>
                                 <th>Item</th>
-                                <th>Producto</th>
+                                <th>Producto</th>                                
                                 <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th>Total</th>
+                                <th>Eliminar</th>
                                 <th></th>
                                 
                                 
                             </tr>
                         </thead>
                         <tbody> 
-                            
+                            <%
+                            double totalPagar=0;
+                            %>
                             <c:forEach var="prod" items="${shoplist}">
                                 <tr>
                                     <td >
                                         <img src="${prod.getbd_imgprod()}" alt="" width="130" height="135">
                                     </td>                                   
                                     <td >
-                                        <h4>$${prod.getbd_precioprod()}</h4>
-                                    </td>
-                                    <td class="cart_quantity">
-                                        <div class="cart_quantity_button">
-                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                        </div>
-                                    </td>
+                                        <h4>${prod.getbd_nombreprod()}</h4>
+                                    </td>                                    
                                     <td >
-                                        <p class="cart_total_price">$${prod.getbd_precioprod()}</p>
+                                        <p class="cart_total_price">${prod.getbd_precioprod()}</p>
                                     </td>
                                     <td class="">
                                         <a href="Controlador?menu=ShopCart&accion=Eliminar&id=${prod.getbd_idcarrito()}"><i class="fa fa-times"></i></a>
@@ -206,23 +202,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody> 
-                                    <tr>
-                                        <td >
-                                            Sub Total
-                                        </td>
-                                        <td >
-                                            $59
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td >
-                                            Eco Tax
-                                        </td>
-                                        <td >
-                                            $59
-                                        </td>
-                                    </tr>
+                                <tbody>                                     
                                     <tr>
                                         <td >
                                             Costo de envío
@@ -236,7 +216,7 @@
                                             Total
                                         </td>
                                         <td >
-                                            $5000,000
+                                            ${totalpagar}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -245,7 +225,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a class="btn btn-default update" href="">Pagar</a>
+                            <a class="btn btn-default update" onclick="print()" href="">Pagar</a>
                             <a class="btn check_out" href="Controlador?menu=Catalogo">Ir al catalogo</a>
 
                         </div>
